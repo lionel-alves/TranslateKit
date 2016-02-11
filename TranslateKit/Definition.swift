@@ -14,7 +14,6 @@ public struct Definition {
     public let definition: String
     public let example: String
 
-
     public init?(dictionary: JSONDictionary) {
 
         guard let id = dictionary["defid"] as? Double,

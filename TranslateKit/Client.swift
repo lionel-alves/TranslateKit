@@ -12,18 +12,17 @@ import Alamofire
 public typealias JSONDictionary = [String: AnyObject]
 
 public class Client {
-    public func translate(word word: String, completion: [Definition]? -> Void) {
-        Alamofire.request(.GET, "http://api.urbandictionary.com/v0/define", parameters: ["term": word])
+
+    public let baseURL = "http://api.urbandictionary.com/v0"
+
+    public func define(word word: String, completion: [Definition]? -> Void) {
+        Alamofire.request(.GET, "\(baseURL)/define", parameters: ["term": word])
             .responseJSON { response in
 
                 if let JSON = response.result.value as? JSONDictionary,
                     list = JSON["list"] as? [JSONDictionary] {
-
-                        let definitions = list.flatMap({ Definition(dictionary: $0) })
-
+                        let definitions = list.flatMap { Definition(dictionary: $0) }
                         completion(definitions)
-
-
                 } else {
                     completion(nil)
                 }
