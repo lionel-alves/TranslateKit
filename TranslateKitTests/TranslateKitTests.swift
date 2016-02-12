@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Alamofire
 @testable import TranslateKit
 
 class TranslateKitTests: XCTestCase {
