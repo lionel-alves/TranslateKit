@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D7AF7C531C53DAEA002ADC8A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AF7C521C53DAEA002ADC8A /* Alamofire.framework */; };
 		D7AF7C591C53DBC0002ADC8A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C581C53DBC0002ADC8A /* Client.swift */; };
 		D7AF7C601C53E451002ADC8A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7AF7C521C53DAEA002ADC8A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7AF7C621C53E7F0002ADC8A /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C611C53E7F0002ADC8A /* Definition.swift */; };
@@ -57,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7AF7C531C53DAEA002ADC8A /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
