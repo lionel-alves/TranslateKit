@@ -1,0 +1,161 @@
+{
+  "interactions" : [
+    {
+      "recorded_at" : 1455256204.05256,
+      "response" : {
+        "body" : {
+          "tags" : [
+            "hi",
+            "hey",
+            "greeting",
+            "yo",
+            "goodbye"
+          ],
+          "sounds" : [
+            "http:\/\/media.urbandictionary.com\/sound\/hello-7503.mp3",
+            "http:\/\/media.urbandictionary.com\/sound\/hello-9778.mp3",
+            "http:\/\/media.urbandictionary.com\/sound\/hello-9897.mp3",
+            "http:\/\/media.urbandictionary.com\/sound\/hello-10454.mp3",
+            "http:\/\/api.twilio.com\/2008-08-01\/Accounts\/ACd09691b82112e4b26fce156d7c01d0ed\/Recordings\/RE35ab2d198fde01bc8889d6bedc7d3108.mp3",
+            "http:\/\/api.twilio.com\/2008-08-01\/Accounts\/ACd09691b82112e4b26fce156d7c01d0ed\/Recordings\/RE7201bb8cc62883692ba7afc67037d5ff.mp3",
+            "http:\/\/wav.urbandictionary.com\/hello-25244.wav",
+            "http:\/\/wav.urbandictionary.com\/hello-37770.wav",
+            "https:\/\/api.twilio.com\/2008-08-01\/Accounts\/ACd09691b82112e4b26fce156d7c01d0ed\/Recordings\/REa6a85510c89613bfc29fd715761f144c.mp3"
+          ],
+          "list" : [
+            {
+              "author" : "mad at the world",
+              "definition" : "what you say when your talking casually with friends and your mom walks in the room",
+              "defid" : 69266,
+              "thumbs_down" : 806,
+              "current_vote" : "",
+              "thumbs_up" : 2790,
+              "permalink" : "http:\/\/hello.urbanup.com\/69266",
+              "example" : "What the hell(mom enters)-o mom.",
+              "word" : "hello"
+            },
+            {
+              "author" : "pirates rule!!!",
+              "definition" : "The only word on this site that has nothing to do with [sex] or [drugs]!",
+              "defid" : 2269237,
+              "thumbs_down" : 432,
+              "current_vote" : "",
+              "thumbs_up" : 1842,
+              "permalink" : "http:\/\/hello.urbanup.com\/2269237",
+              "example" : "person 1: hello\r\nPerson 2: hi\r\nPerson 1: goodbye\r\nPerson 2: Farewell, and may the forces of evil become confused in their eternal search for you\r\n*person 1 runs away*",
+              "word" : "Hello"
+            },
+            {
+              "author" : "DJ",
+              "definition" : "1.  A greeting\r\n2.  A for of incredulity",
+              "defid" : 390319,
+              "thumbs_down" : 328,
+              "current_vote" : "",
+              "thumbs_up" : 659,
+              "permalink" : "http:\/\/hello.urbanup.com\/390319",
+              "example" : "1.  'HELLO!!!!!!'\r\n2.  'I satyed at home last night watching movies'\r\n     '... HELLO!!?!! You were supposed to come to my party last night!'",
+              "word" : "hello"
+            },
+            {
+              "author" : "Sam",
+              "definition" : "The opposite of [O-hell]\r\nYou use Hello when your pleased to see someone.",
+              "defid" : 322846,
+              "thumbs_down" : 424,
+              "current_vote" : "",
+              "thumbs_up" : 725,
+              "permalink" : "http:\/\/hello.urbanup.com\/322846",
+              "example" : "\"Hello, It's you!!\"",
+              "word" : "Hello"
+            },
+            {
+              "author" : "That freakin guy",
+              "definition" : "How to say Jell-O in Spanish. Like when that guy comes to the door in the Rocky Horror Picture show, and everybody tells him to say Jell-O in Spanish, and he says \"Hell-O\"",
+              "defid" : 562522,
+              "thumbs_down" : 230,
+              "current_vote" : "",
+              "thumbs_up" : 374,
+              "permalink" : "http:\/\/hello.urbanup.com\/562522",
+              "example" : "<<<CRREEEEAAAAKKKK>>>> ...Hell-O.",
+              "word" : "hello"
+            },
+            {
+              "author" : "Rahim Walji",
+              "definition" : "greeting to others form of friendly greeting",
+              "defid" : 379429,
+              "thumbs_down" : 202,
+              "current_vote" : "",
+              "thumbs_up" : 331,
+              "permalink" : "http:\/\/hello.urbanup.com\/379429",
+              "example" : "hello im silly",
+              "word" : "hello"
+            },
+            {
+              "author" : "AuburnTIGER",
+              "definition" : "(1) an almost obscelete form of greeting most associated with straightlaced people; \r\n(2) a polite way of answering a phone",
+              "defid" : 504054,
+              "thumbs_down" : 150,
+              "current_vote" : "",
+              "thumbs_up" : 210,
+              "permalink" : "http:\/\/hello.urbanup.com\/504054",
+              "example" : "(1)Bob (sees Bill on street): \"Hello, Bill!\"\r\nBill: \"Well, hello, Bob.\"\r\n(2)(Phone rings loudly) \r\nJim: \"Hello?\"\r\nJames Watson from AT&T: \"Hi, this is James Watson from AT&T.  I'm calling to talk to you about your long distance plan.\"",
+              "word" : "hello"
+            },
+            {
+              "author" : "fiubvevb",
+              "definition" : "What you say under your breath to your friend when a hot member of the opposite sex is walking by",
+              "defid" : 4890419,
+              "thumbs_down" : 66,
+              "current_vote" : "",
+              "thumbs_up" : 118,
+              "permalink" : "http:\/\/hello.urbanup.com\/4890419",
+              "example" : "-Hot person walks into the room-\n\nAdoring member of the opposite sex: \"hello\"",
+              "word" : "Hello"
+            },
+            {
+              "author" : "I_Love_Me",
+              "definition" : "A greeting.  A way of telling someone you noticed them.  Some synonyms of \"hello\" are: hi, hey, greetings, howdy, hola (Spanish for \"hello.\")",
+              "defid" : 856704,
+              "thumbs_down" : 71,
+              "current_vote" : "",
+              "thumbs_up" : 122,
+              "permalink" : "http:\/\/hello.urbanup.com\/856704",
+              "example" : "Hello Sara.  How are you?\r\nHello Danny.  I am good.",
+              "word" : "Hello"
+            },
+            {
+              "author" : "Tea Cake",
+              "definition" : "A spastic interrogative exclamation usually following complete ineptitude in the field of physics.",
+              "defid" : 626610,
+              "thumbs_down" : 27,
+              "current_vote" : "",
+              "thumbs_up" : 47,
+              "permalink" : "http:\/\/hello.urbanup.com\/626610",
+              "example" : "What's the field integral of the magnetic flux of the solenoid?\r\n\r\nDo you understand this?\r\n\r\nhEllo?",
+              "word" : "hEllo?"
+            }
+          ],
+          "result_type" : "exact"
+        },
+        "status" : 200,
+        "url" : "http:\/\/api.urbandictionary.com\/v0\/define?term=hello",
+        "headers" : {
+          "Status" : "200 OK",
+          "Content-Type" : "application\/json;charset=utf-8",
+          "Server" : "Cowboy",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Via" : "1.1 vegur",
+          "Date" : "Fri, 12 Feb 2016 05:30:21 GMT",
+          "Content-Length" : "4520",
+          "X-License" : "http:\/\/api.urbandictionary.com\/",
+          "Connection" : "keep-alive"
+        }
+      },
+      "request" : {
+        "method" : "GET",
+        "url" : "http:\/\/api.urbandictionary.com\/v0\/define?term=hello"
+      }
+    }
+  ],
+  "name" : "api-showUser"
+}
