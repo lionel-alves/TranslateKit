@@ -11,7 +11,7 @@
 		38E68DBA1C6DAA0300F51787 /* DVR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38E68DB71C6DA88200F51787 /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38E68DBD1C6DAA5800F51787 /* api-DefineWord.json in Resources */ = {isa = PBXBuildFile; fileRef = 38E68DBC1C6DAA5800F51787 /* api-DefineWord.json */; };
 		D7AF7C591C53DBC0002ADC8A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C581C53DBC0002ADC8A /* Client.swift */; };
-		D7AF7C621C53E7F0002ADC8A /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C611C53E7F0002ADC8A /* Definition.swift */; };
+		D7AF7C621C53E7F0002ADC8A /* SlangDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C611C53E7F0002ADC8A /* SlangDefinition.swift */; };
 		D7C964271C53D7E0007B7BB7 /* TranslateKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C964261C53D7E0007B7BB7 /* TranslateKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7C9642E1C53D7E1007B7BB7 /* TranslateKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C964231C53D7E0007B7BB7 /* TranslateKit.framework */; };
 		D7C964331C53D7E1007B7BB7 /* TranslateKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C964321C53D7E1007B7BB7 /* TranslateKitTests.swift */; };
@@ -46,7 +46,7 @@
 		38E68DBC1C6DAA5800F51787 /* api-DefineWord.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-DefineWord.json"; sourceTree = "<group>"; };
 		D7AF7C521C53DAEA002ADC8A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D7AF7C581C53DBC0002ADC8A /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		D7AF7C611C53E7F0002ADC8A /* Definition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
+		D7AF7C611C53E7F0002ADC8A /* SlangDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlangDefinition.swift; sourceTree = "<group>"; };
 		D7C964231C53D7E0007B7BB7 /* TranslateKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TranslateKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C964261C53D7E0007B7BB7 /* TranslateKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranslateKit.h; sourceTree = "<group>"; };
 		D7C964281C53D7E0007B7BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		D7AF7C571C53DBAA002ADC8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D7AF7C611C53E7F0002ADC8A /* Definition.swift */,
+				D7AF7C611C53E7F0002ADC8A /* SlangDefinition.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7AF7C621C53E7F0002ADC8A /* Definition.swift in Sources */,
+				D7AF7C621C53E7F0002ADC8A /* SlangDefinition.swift in Sources */,
 				D7AF7C591C53DBC0002ADC8A /* Client.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

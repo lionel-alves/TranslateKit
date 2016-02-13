@@ -8,20 +8,26 @@
 
 import Foundation
 
-public struct Definition {
+public struct SlangDefinition {
 
     public let id: Double
     public let definition: String
     public let example: String
+    public let thumbsUp: Double
+    public let thumbsDown: Double
 
     public init?(dictionary: JSONDictionary) {
 
         guard let id = dictionary["defid"] as? Double,
             definition = dictionary["definition"] as? String,
-            example = dictionary["example"] as? String  else { return nil }
+            example = dictionary["example"] as? String,
+            thumbsUp = dictionary["thumbs_up"] as? Double,
+            thumbsDown = dictionary["thumbs_down"] as? Double else { return nil }
 
         self.id = id
         self.definition = definition
         self.example = example
+        self.thumbsUp = thumbsUp
+        self.thumbsDown = thumbsDown
     }
 }
