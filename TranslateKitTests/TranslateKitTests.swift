@@ -17,14 +17,13 @@ class TranslateKitTests: XCTestCase {
         let dvr = Session(cassetteName: "api-DefineWord", backingSession: Client.defaultSession)
         let expectation = expectationWithDescription("Network")
         let client = Client(URLSession:dvr)
-        
-        let expectedDefinition = "what you say when your talking casually with friends and your mom walks in the room"
-        let expectedExample = "What the hell(mom enters)-o mom."
-        
-        client.define(word: "hello") { definitions in
+
+        client.define(slang: "hello") { definitions in
             if let definitions = definitions {
-                XCTAssertEqual(expectedDefinition, definitions.first?.definition)
-                XCTAssertEqual(expectedExample, definitions.first?.example)
+                XCTAssertEqual(definitions.first?.definition, "what you say when your talking casually with friends and your mom walks in the room")
+                XCTAssertEqual(definitions.first?.example, "What the hell(mom enters)-o mom.")
+                XCTAssertEqual(definitions.first?.thumbsUp, 2790)
+                XCTAssertEqual(definitions.first?.thumbsDown, 806)
             }
             else {
                 XCTFail("Failure.")

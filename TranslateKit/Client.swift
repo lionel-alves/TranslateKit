@@ -27,7 +27,7 @@ public class Client {
 
     // MARK: - API
 
-    public func define(word word: String, completion: [Definition]? -> Void) {
+    public func define(slang word: String, completion: [SlangDefinition]? -> Void) {
 
         guard let URL = NSURL(string: "\(baseURL)/define?term=\(word)") else {
             completion(nil)
@@ -38,7 +38,7 @@ public class Client {
 
         performRequest(request) { (dictionary: JSONDictionary?) -> Void in
             if let dictionary = dictionary, list = dictionary["list"] as? [JSONDictionary] {
-                let definitions = list.flatMap { Definition(dictionary: $0) }
+                let definitions = list.flatMap { SlangDefinition(dictionary: $0) }
                 completion(definitions)
             }
         }
