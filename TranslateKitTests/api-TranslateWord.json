@@ -1,0 +1,692 @@
+{
+  "interactions" : [
+    {
+      "recorded_at" : 1455470008.227706,
+      "response" : {
+        "body" : {
+          "Lines" : "End Reached",
+          "term0" : {
+            "AdditionalTranslations" : {
+              "3" : {
+                "FirstTranslation" : {
+                  "POS" : "vtr",
+                  "sense" : "",
+                  "term" : "armer"
+                },
+                "SecondTranslation" : {
+                  "POS" : "vtr",
+                  "sense" : "",
+                  "term" : "équiper en armes, approvisionner en armes"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm, replace: arm sb",
+                  "POS" : "vtr",
+                  "usage" : "",
+                  "sense" : "prepare for war"
+                }
+              },
+              "1" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "militaire",
+                  "term" : "section, division"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm",
+                  "POS" : "n",
+                  "usage" : "figurative",
+                  "sense" : "military: branch"
+                }
+              },
+              "4" : {
+                "FirstTranslation" : {
+                  "POS" : "vtr",
+                  "sense" : "",
+                  "term" : "armer"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm, replace: arm sb with sth",
+                  "POS" : "vtr",
+                  "usage" : "",
+                  "sense" : "equip with weapons"
+                }
+              },
+              "2" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "figuré",
+                  "term" : "bras"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm",
+                  "POS" : "n",
+                  "usage" : "figurative",
+                  "sense" : "power"
+                }
+              },
+              "0" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "machine",
+                  "term" : "manche, bras"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "machine: arm like lever"
+                }
+              }
+            },
+            "PrincipalTranslations" : {
+              "3" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "chaise",
+                  "term" : "accoudoir"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "chair part: arm rest"
+                }
+              },
+              "1" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "partie",
+                  "term" : "branche"
+                },
+                "SecondTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "organisation",
+                  "term" : "division"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm",
+                  "POS" : "n",
+                  "usage" : "figurative",
+                  "sense" : "branch of an organisation"
+                }
+              },
+              "4" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "vêtement, pull",
+                  "term" : "manche"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "garment: sleeve"
+                }
+              },
+              "2" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "",
+                  "term" : "arme"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm, invisible: arms",
+                  "POS" : "n",
+                  "usage" : "usu pl",
+                  "sense" : "weapon"
+                }
+              },
+              "0" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "corps",
+                  "term" : "bras"
+                },
+                "SecondTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "Médecine, corps",
+                  "term" : "membre supérieur"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "upper limb"
+                }
+              },
+              "5" : {
+                "FirstTranslation" : {
+                  "POS" : "vtr",
+                  "sense" : "",
+                  "term" : "armer"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm, replace: arm sb",
+                  "POS" : "vtr",
+                  "usage" : "",
+                  "sense" : "equip with weapons"
+                }
+              }
+            }
+          },
+          "original" : {
+            "Compounds" : {
+              "3" : {
+                "FirstTranslation" : {
+                  "POS" : "loc adv",
+                  "sense" : "",
+                  "term" : "bras-dessus, bras-dessous"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm in arm",
+                  "POS" : "adv",
+                  "usage" : "",
+                  "sense" : "with arms linked"
+                }
+              },
+              "12" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "marine",
+                  "term" : "estrapade"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "dipping from the yard arm",
+                  "POS" : "",
+                  "usage" : "marine activities",
+                  "sense" : ""
+                }
+              },
+              "4" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "",
+                  "term" : "bras de fer"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm wrestling",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "contest of strength"
+                }
+              },
+              "21" : {
+                "FirstTranslation" : {
+                  "POS" : "vtr",
+                  "sense" : "anglicisme",
+                  "term" : "booster"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "shot in the arm",
+                  "POS" : "n",
+                  "usage" : "informal, figurative",
+                  "sense" : "boost, sth revitalizing"
+                }
+              },
+              "30" : {
+                "FirstTranslation" : {
+                  "POS" : "adj",
+                  "sense" : "",
+                  "term" : "à trois bras"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "three-arm",
+                  "POS" : "",
+                  "usage" : "",
+                  "sense" : ""
+                }
+              },
+              "5" : {
+                "FirstTranslation" : {
+                  "POS" : "nfpl",
+                  "sense" : "",
+                  "term" : "pressions directes"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm-twisting",
+                  "POS" : "",
+                  "usage" : "",
+                  "sense" : ""
+                }
+              },
+              "13" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "",
+                  "term" : "bras de levier"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "lever arm",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "physics: distance between force and fulcrum"
+                }
+              },
+              "22" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "",
+                  "term" : "arme de poing"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "side arm",
+                  "POS" : "",
+                  "usage" : "",
+                  "sense" : ""
+                }
+              },
+              "6" : {
+                "FirstTranslation" : {
+                  "POS" : "loc adv",
+                  "sense" : "",
+                  "term" : "à distance respectable"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm's length",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "distance just beyond reach"
+                }
+              },
+              "31" : {
+                "FirstTranslation" : {
+                  "POS" : "v",
+                  "sense" : "obliger",
+                  "term" : "forcer la main à quelqu'un"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "twist someone's arm",
+                  "POS" : "",
+                  "usage" : "",
+                  "sense" : "oblige"
+                }
+              },
+              "14" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "",
+                  "term" : "bras de la justice"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "long arm of the law",
+                  "POS" : "n",
+                  "usage" : "figurative",
+                  "sense" : "police powers"
+                }
+              },
+              "7" : {
+                "FirstTranslation" : {
+                  "POS" : "adv",
+                  "sense" : "",
+                  "term" : "à distance"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "at arm's length",
+                  "POS" : "adv",
+                  "usage" : "figurative",
+                  "sense" : "at safe distance"
+                }
+              },
+              "23" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "",
+                  "term" : "arme de poing"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "small arm",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "handgun"
+                }
+              },
+              "8" : {
+                "FirstTranslation" : {
+                  "POS" : "loc adv",
+                  "sense" : "",
+                  "term" : "à bout de bras"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "at arm's length",
+                  "POS" : "adv",
+                  "usage" : "literal",
+                  "sense" : "at end of your arm"
+                }
+              },
+              "15" : {
+                "FirstTranslation" : {
+                  "POS" : "loc v",
+                  "sense" : "figuré, familier",
+                  "term" : "payer un prix fou, acheter un prix fou"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "pay an arm and a leg",
+                  "POS" : "v expr",
+                  "usage" : "slang, figurative",
+                  "sense" : "pay a high price"
+                }
+              },
+              "32" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "",
+                  "term" : "haut du bras"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "upper arm",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "arm from shoulder to elbow"
+                }
+              },
+              "9" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "",
+                  "term" : "accoudoir"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "chair arm",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "armrest of a seat"
+                }
+              },
+              "24" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "Sports",
+                  "term" : "bras tendu"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "straight-arm",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "fending off opponent with stiff arm"
+                }
+              },
+              "16" : {
+                "FirstTranslation" : {
+                  "POS" : "",
+                  "sense" : "",
+                  "term" : "arme à répétition"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "repeating arm",
+                  "POS" : "",
+                  "usage" : "",
+                  "sense" : ""
+                }
+              },
+              "25" : {
+                "FirstTranslation" : {
+                  "POS" : "loc v",
+                  "sense" : "Sports",
+                  "term" : "repousser qqn avec un bras tendu"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "straight-arm, replace: straight-arm sb, stiff-arm",
+                  "POS" : "vtr",
+                  "usage" : "",
+                  "sense" : "sport: fend off with stiff arm"
+                }
+              },
+              "17" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "",
+                  "term" : "culbuteur"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "rocker arm",
+                  "POS" : "n",
+                  "usage" : "",
+                  "sense" : "mechanical part that pivots"
+                }
+              },
+              "26" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "",
+                  "term" : "force"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "strong-arm tactics",
+                  "POS" : "npl",
+                  "usage" : "figurative",
+                  "sense" : "threats, violence"
+                }
+              },
+              "18" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "",
+                  "term" : "piqûre dans le bras"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "shot in the arm",
+                  "POS" : "n",
+                  "usage" : "informal, literal",
+                  "sense" : "injection"
+                }
+              },
+              "27" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "",
+                  "term" : "méthode forte"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "strong-arm tactics",
+                  "POS" : "npl",
+                  "usage" : "figurative",
+                  "sense" : "threats, violence"
+                }
+              },
+              "19" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "",
+                  "term" : "injection dans le bras"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "shot in the arm",
+                  "POS" : "n",
+                  "usage" : "informal, literal",
+                  "sense" : "injection"
+                }
+              },
+              "28" : {
+                "FirstTranslation" : {
+                  "POS" : "",
+                  "sense" : "",
+                  "term" : "manche de l'épée\/du sabre"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "sword arm",
+                  "POS" : "",
+                  "usage" : "",
+                  "sense" : ""
+                }
+              },
+              "29" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "",
+                  "term" : "le bras fort"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "the strong arm",
+                  "POS" : "",
+                  "usage" : "",
+                  "sense" : ""
+                }
+              },
+              "0" : {
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "",
+                  "term" : "aéronavale"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "air arm",
+                  "POS" : "",
+                  "usage" : "",
+                  "sense" : ""
+                }
+              },
+              "10" : {
+                "FirstTranslation" : {
+                  "POS" : "v",
+                  "sense" : "fusil",
+                  "term" : "armer"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "cock, arm",
+                  "POS" : "",
+                  "usage" : "",
+                  "sense" : ""
+                }
+              },
+              "1" : {
+                "ThirdTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "très familier : coûter",
+                  "term" : "la peau des fesses"
+                },
+                "FirstTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "",
+                  "term" : "une fortune"
+                },
+                "SecondTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "familier : coûter",
+                  "term" : "un bras"
+                },
+                "FourthTranslation" : {
+                  "POS" : "nf",
+                  "sense" : "vulgaire : coûter",
+                  "term" : "la peau du cul"
+                },
+                "OriginalTerm" : {
+                  "term" : "an arm and a leg",
+                  "POS" : "n",
+                  "usage" : "slang, figurative",
+                  "sense" : "high price, high cost"
+                },
+                "Note" : ""
+              },
+              "11" : {
+                "FirstTranslation" : {
+                  "POS" : "loc v",
+                  "sense" : "figuré, familier",
+                  "term" : "coûter un bras"
+                },
+                "SecondTranslation" : {
+                  "POS" : "loc v",
+                  "sense" : "figuré, familier",
+                  "term" : "coûter les yeux de la tête"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "cost an arm and a leg",
+                  "POS" : "v expr",
+                  "usage" : "slang, figurative",
+                  "sense" : "be expensive"
+                }
+              },
+              "2" : {
+                "FirstTranslation" : {
+                  "POS" : "loc adv",
+                  "sense" : "",
+                  "term" : "bras-dessus, bras-dessous"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "arm in arm",
+                  "POS" : "adj",
+                  "usage" : "",
+                  "sense" : "with arms linked"
+                }
+              },
+              "20" : {
+                "FirstTranslation" : {
+                  "POS" : "nm",
+                  "sense" : "figuré",
+                  "term" : "coup de fouet"
+                },
+                "Note" : "",
+                "OriginalTerm" : {
+                  "term" : "shot in the arm",
+                  "POS" : "n",
+                  "usage" : "informal, figurative",
+                  "sense" : "boost, sth revitalizing"
+                }
+              }
+            }
+          },
+          "END" : true
+        },
+        "status" : 200,
+        "url" : "http:\/\/api.wordreference.com\/api_key\/json\/\/enfr\/arm",
+        "headers" : {
+          "Access-Control-Allow-Origin" : "*",
+          "Set-Cookie" : "per24h=1; domain=www.wordreference.com; expires=Mon, 15-Feb-2016 16:53:05 GMT; path=\/, per24c=1; domain=www.wordreference.com; expires=Mon, 15-Feb-2016 16:53:05 GMT; path=\/, llang=enfri; domain=wordreference.com; expires=Thu, 14-Feb-2019 16:53:05 GMT; path=\/",
+          "Content-Type" : "application\/json; charset=utf-8",
+          "Server" : "Microsoft-IIS\/8.5",
+          "Date" : "Sun, 14 Feb 2016 16:53:05 GMT",
+          "Access-Control-Allow-Headers" : "X-Requested-With",
+          "Content-Length" : "10533",
+          "Cache-Control" : "private",
+          "X-AspNet-Version" : "4.0.30319"
+        }
+      },
+      "request" : {
+        "method" : "GET",
+        "url" : "http:\/\/api.wordreference.com\/api_key\/json\/\/enfr\/arm"
+      }
+    }
+  ],
+  "name" : "api-TranslateWord"
+}
