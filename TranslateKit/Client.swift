@@ -10,11 +10,14 @@ import Foundation
 
 public typealias JSONDictionary = [String: AnyObject]
 
+let wordReferenceApiKey: String = "api_key"
+
 public class Client {
 
     public let URLSession: NSURLSession
     public let baseURL = "http://api.urbandictionary.com/v0"
-
+    public let wordReferenceBaseUrl = "http://api.wordreference.com/\(wordReferenceApiKey)/json/"
+    
     public init(URLSession: NSURLSession = defaultSession) {
         self.URLSession = URLSession
     }
@@ -27,6 +30,7 @@ public class Client {
 
     // MARK: - API
 
+	// MARK: Urban Dictionary
     public func define(slang word: String, completion: [SlangDefinition]? -> Void) {
 
         guard let URL = NSURL(string: "\(baseURL)/define?term=\(word)") else {
@@ -44,6 +48,22 @@ public class Client {
         }
     }
 
+    // MARK: Word Reference
+    public func translate(word word: String, from: Language, to: Language, completion: Translation? -> Void) {
+        
+        guard let URL = NSURL(string: "\(wordReferenceBaseUrl)/\(from.code())\(to.code())/\(word)") else {
+            completion(nil)
+            return
+        }
+        
+        let request = NSMutableURLRequest(URL: URL)
+        
+        performRequest(request) { (dictionary: JSONDictionary?) -> Void in
+            if let translation: Translation = dictionary.flatMap ({ Translation(dictionary: $0) }) {
+                completion(translation)
+            }
+        }
+    }
 
     // MARK: - Private
 
