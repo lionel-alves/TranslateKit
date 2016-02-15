@@ -15,7 +15,7 @@ let wordReferenceApiKey: String = "api_key"
 public class Client {
 
     public let URLSession: NSURLSession
-    public let baseURL = "http://api.urbandictionary.com/v0"
+    public let urbanDictionaryBaseUrl = "http://api.urbandictionary.com/v0"
     public let wordReferenceBaseUrl = "http://api.wordreference.com/\(wordReferenceApiKey)/json/"
     
     public init(URLSession: NSURLSession = defaultSession) {
@@ -33,7 +33,7 @@ public class Client {
 	// MARK: Urban Dictionary
     public func define(slang word: String, completion: [SlangDefinition]? -> Void) {
 
-        guard let URL = NSURL(string: "\(baseURL)/define?term=\(word)") else {
+        guard let URL = NSURL(string: "\(urbanDictionaryBaseUrl)/define?term=\(word)") else {
             completion(nil)
             return
         }

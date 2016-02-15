@@ -15,34 +15,27 @@ public struct Translation {
     public let compoundMeanings: [Meaning]
     
     public init?(dictionary:JSONDictionary) {
-        guard let termDictionaries = dictionary["term0"] as? JSONDictionary,
-            meaningDictionaries = termDictionaries["PrincipalTranslations"] as? JSONDictionary else { return nil }
-        let sortedDictionaries = meaningDictionaries.sort({ $0.0 < $1.0 })
-        self.meanings = sortedDictionaries.flatMap {
+        guard let termDictionary = dictionary["term0"] as? JSONDictionary else { return nil }
+        
+        let meanings = Translation.meanings(fromDictionary: termDictionary["PrincipalTranslations"] as? JSONDictionary)
+        guard meanings.count > 0 else { return nil }
+        
+        self.meanings = meanings
+        self.additionalMeanings = Translation.meanings(fromDictionary: termDictionary["AdditionalTranslations"] as? JSONDictionary)
+        self.compoundMeanings = Translation.meanings(fromDictionary: dictionary["original"]?["Compounds"] as? JSONDictionary)
+    }
+    
+    // MARK: - Private
+    
+    static private func meanings(fromDictionary dictionary: JSONDictionary?) -> [Meaning] {
+        guard let meaningsDictionary = dictionary else { return [] }
+        
+        let sortedDictionary = meaningsDictionary.sort({ $0.0 < $1.0 })
+        let meanings:[Meaning] = sortedDictionary.flatMap {
             guard let dictionary = $0.1 as? JSONDictionary else { return nil }
             return Meaning(dictionary: dictionary)
         }
         
-        if let additionalMeaningDictionaries = termDictionaries["AdditionalTranslations"] as? JSONDictionary {
-            let sortedDictionaries = additionalMeaningDictionaries.sort({ $0.0 < $1.0 })
-            self.additionalMeanings = sortedDictionaries.flatMap {
-                guard let dictionary = $0.1 as? JSONDictionary else { return nil }
-                return Meaning(dictionary: dictionary)
-            }
-        } else {
-            self.additionalMeanings = [];
-        }
-        
-        if let originalDictionaries = dictionary["original"] as? JSONDictionary,
-        compoundMeaningDictionaries = originalDictionaries["Compounds"] as? JSONDictionary {
-            let sortedDictionaries = compoundMeaningDictionaries.sort({ $0.0 < $1.0 })
-            self.compoundMeanings = sortedDictionaries.flatMap {
-                guard let dictionary = $0.1 as? JSONDictionary else { return nil }
-                return Meaning(dictionary: dictionary)
-            }
-        }
-        else {
-            self.compoundMeanings = [];
-        }
+        return meanings
     }
 }

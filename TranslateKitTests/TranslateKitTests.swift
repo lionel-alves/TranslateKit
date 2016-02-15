@@ -45,7 +45,6 @@ class TranslateKitTests: XCTestCase {
         client.translate(word: "arm", from: .English, to: .French) { translation in
             if let translation = translation {
                 
-                
                 // Principal Translation
                 XCTAssertEqual(translation.meanings.first?.translatedWords.first?.term, "bras")
                 XCTAssertEqual(translation.meanings.first?.translatedWords.first?.pos, "nm")
@@ -60,7 +59,7 @@ class TranslateKitTests: XCTestCase {
             }
             
             expectation.fulfill()
-            }
+        }
         
         waitForExpectationsWithTimeout(1, handler: nil)
     }
@@ -74,13 +73,13 @@ class TranslateKitTests: XCTestCase {
         client.translate(word: "arm", from: .English, to: .French) { translation in
             if let translation = translation {
                 // Additional Translation
-                XCTAssertEqual(translation.additionalMeanings.first?.translatedWords.first?.term, "manche, bras")
-                XCTAssertEqual(translation.additionalMeanings.first?.translatedWords.first?.pos, "nm")
-                XCTAssertEqual(translation.additionalMeanings.first?.translatedWords.first?.sense, "machine")
+                XCTAssertEqual(translation.additionalMeanings[1].translatedWords.first?.term, "section, division")
+                XCTAssertEqual(translation.additionalMeanings[1].translatedWords.first?.pos, "nf")
+                XCTAssertEqual(translation.additionalMeanings[1].translatedWords.first?.sense, "militaire")
                 
-                XCTAssertEqual(translation.additionalMeanings.first?.originalWord.term, "arm")
-                XCTAssertEqual(translation.additionalMeanings.first?.originalWord.pos, "n")
-                XCTAssertEqual(translation.additionalMeanings.first?.originalWord.sense, "machine: arm like lever")
+                XCTAssertEqual(translation.additionalMeanings[1].originalWord.term, "arm")
+                XCTAssertEqual(translation.additionalMeanings[1].originalWord.pos, "n")
+                XCTAssertEqual(translation.additionalMeanings[1].originalWord.sense, "military: branch")
             }
             else {
                 XCTFail("Failure.")
@@ -102,14 +101,14 @@ class TranslateKitTests: XCTestCase {
             if let translation = translation {
                 
                 // Compound Translation
-                XCTAssertEqual(translation.compoundMeanings.first?.translatedWords.first?.term, "aéronavale")
-                XCTAssertEqual(translation.compoundMeanings.first?.translatedWords.first?.pos, "nf")
-                XCTAssertEqual(translation.compoundMeanings.first?.translatedWords.first?.sense, "")
+                XCTAssertEqual(translation.compoundMeanings[1].translatedWords[2].term, "la peau des fesses")
+                XCTAssertEqual(translation.compoundMeanings[1].translatedWords[2].pos, "nf")
+                XCTAssertEqual(translation.compoundMeanings[1].translatedWords[2].sense, "très familier : coûter")
                 
                 // Original Term
-                XCTAssertEqual(translation.compoundMeanings.first?.originalWord.term, "air arm")
-                XCTAssertEqual(translation.compoundMeanings.first?.originalWord.pos, "")
-                XCTAssertEqual(translation.compoundMeanings.first?.originalWord.sense, "")
+                XCTAssertEqual(translation.compoundMeanings[1].originalWord.term, "an arm and a leg")
+                XCTAssertEqual(translation.compoundMeanings[1].originalWord.pos, "n")
+                XCTAssertEqual(translation.compoundMeanings[1].originalWord.sense, "high price, high cost")
             }
             else {
                 XCTFail("Failure.")

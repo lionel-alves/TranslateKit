@@ -22,11 +22,6 @@ public enum Language: String {
     }
     
     public func name() -> String {
-        switch self {
-        case .French:
-            return "French"
-        case .English:
-            return "English"
-        }
+        return String(self)
     }
 }
