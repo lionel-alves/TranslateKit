@@ -46,10 +46,10 @@ public struct Meaning {
     public init?(dictionary: JSONDictionary) {
         
         guard let originalWordDictionary = dictionary["OriginalTerm"] as? JSONDictionary,
-        originalWord = Word(dictionary: originalWordDictionary) else { return nil }
+            originalWord = Word(dictionary: originalWordDictionary) else { return nil }
         
         self.originalWord = originalWord
-
+        
         let sortedDictionaries = dictionary.sort {
             Meaning.OrdinalNumber(rawValue: $0.0)?.priority < Meaning.OrdinalNumber(rawValue: $1.0)?.priority
         }
