@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38E68DB91C6DA9AA00F51787 /* DVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E68DB71C6DA88200F51787 /* DVR.framework */; };
+		382BA5261C758263002CF118 /* DVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E68DB71C6DA88200F51787 /* DVR.framework */; };
 		38E68DBA1C6DAA0300F51787 /* DVR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38E68DB71C6DA88200F51787 /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38E68DBD1C6DAA5800F51787 /* api-DefineWord.json in Resources */ = {isa = PBXBuildFile; fileRef = 38E68DBC1C6DAA5800F51787 /* api-DefineWord.json */; };
 		38E68DBF1C6FBCF200F51787 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E68DBE1C6FBCF200F51787 /* Translation.swift */; };
@@ -70,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38E68DB91C6DA9AA00F51787 /* DVR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382BA5261C758263002CF118 /* DVR.framework in Frameworks */,
 				D7C9642E1C53D7E1007B7BB7 /* TranslateKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,7 +107,7 @@
 		38E68DC51C6FE3C400F51787 /* UrbanDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				D7AF7C611C53E7F0002ADC8A /* Definition.swift */,
+				D7AF7C611C53E7F0002ADC8A /* SlangDefinition.swift */,
 			);
 			name = UrbanDictionary;
 			sourceTree = "<group>";
