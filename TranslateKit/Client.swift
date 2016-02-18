@@ -10,15 +10,14 @@ import Foundation
 
 public typealias JSONDictionary = [String: AnyObject]
 
-let wordReferenceApiKey: String = "api_key"
-
 public class Client {
-
-    public let URLSession: NSURLSession
-    public let urbanDictionaryBaseUrl = "http://api.urbandictionary.com/v0"
-    public let wordReferenceBaseUrl = "http://api.wordreference.com/\(wordReferenceApiKey)/json/"
     
-    public init(URLSession: NSURLSession = defaultSession) {
+    private let URLSession: NSURLSession
+    private let urbanDictionaryBaseUrl = "http://api.urbandictionary.com/v0"
+    private let wordReferenceBaseUrl: String
+    
+    public init(wordReferenceApiKey: String, URLSession: NSURLSession = defaultSession) {
+        self.wordReferenceBaseUrl = "http://api.wordreference.com/\(wordReferenceApiKey)/json/"
         self.URLSession = URLSession
     }
 

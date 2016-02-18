@@ -17,7 +17,7 @@ class TranslateKitTests: XCTestCase {
         
         let dvr = Session(cassetteName: "api-DefineWord", backingSession: Client.defaultSession)
         let expectation = expectationWithDescription("Network")
-        let client = Client(URLSession:dvr)
+        let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
 
         client.define(slang: "hello") { definitions in
             if let definitions = definitions {
@@ -40,7 +40,7 @@ class TranslateKitTests: XCTestCase {
         
         let dvr = Session(cassetteName: "api-TranslateWord", backingSession: Client.defaultSession)
         let expectation = expectationWithDescription("Network")
-        let client = Client(URLSession:dvr)
+        let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
         
         client.translate(word: "arm", from: .English, to: .French) { translation in
             if let translation = translation {
@@ -68,7 +68,7 @@ class TranslateKitTests: XCTestCase {
         
         let dvr = Session(cassetteName: "api-TranslateWord", backingSession: Client.defaultSession)
         let expectation = expectationWithDescription("Network")
-        let client = Client(URLSession:dvr)
+        let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
         
         client.translate(word: "arm", from: .English, to: .French) { translation in
             if let translation = translation {
@@ -95,7 +95,7 @@ class TranslateKitTests: XCTestCase {
         
         let dvr = Session(cassetteName: "api-TranslateWord", backingSession: Client.defaultSession)
         let expectation = expectationWithDescription("Network")
-        let client = Client(URLSession:dvr)
+        let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
         
         client.translate(word: "arm", from: .English, to: .French) { translation in
             if let translation = translation {
