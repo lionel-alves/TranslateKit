@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct SlangDefinition {
+public struct SlangDefinition: DictionaryDeserializable, DictionarySerializable {
 
     public let id: Double
     public let definition: String
@@ -29,5 +29,15 @@ public struct SlangDefinition {
         self.example = example
         self.thumbsUp = thumbsUp
         self.thumbsDown = thumbsDown
+    }
+
+    public var dictionary: JSONDictionary {
+        return [
+            "defid": id,
+            "definition": definition,
+            "example": example,
+            "thumbs_up": thumbsUp,
+            "thumbs_down": thumbsDown,
+        ]
     }
 }

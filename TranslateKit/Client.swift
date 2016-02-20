@@ -8,8 +8,6 @@
 
 import Foundation
 
-public typealias JSONDictionary = [String: AnyObject]
-
 public class Client {
     
     private let URLSession: NSURLSession
