@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Meaning {
+public struct Meaning: DictionaryDeserializable {
     
     public let originalWord: Word
     public let translatedWords: [Word]
@@ -59,4 +59,6 @@ public struct Meaning {
             return Word(dictionary: dictionary)
         }
     }
+
+    // FIXME: Implement DictionarySerializable
 }

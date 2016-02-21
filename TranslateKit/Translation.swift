@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct Translation {
+public struct Translation: DictionaryDeserializable {
     
     public let meanings: [Meaning]
     public let additionalMeanings: [Meaning]
@@ -38,4 +38,6 @@ public struct Translation {
         
         return meanings
     }
+
+    // FIXME: Implement DictionarySerializable
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Word {
+public struct Word: DictionaryDeserializable {
     
     public let term: String
     public let pos: String
@@ -25,4 +25,6 @@ public struct Word {
         self.sense = sense
         self.usage = dictionary["usage"] as? String
     }
+
+    // FIXME: Implement DictionarySerializable
 }
