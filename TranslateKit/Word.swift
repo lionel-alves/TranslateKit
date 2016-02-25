@@ -27,11 +27,17 @@ public struct Word: DictionaryDeserializable, DictionarySerializable {
     }
     
     public var dictionary: JSONDictionary {
-        return [
+        
+        var dictionary = [
             "term" : term,
-            "POS" : pos,
-            "sense" : sense,
-            "usage" : usage!
+            "pos" : pos,
+            "sense" : sense
         ]
+        
+        if let usage = usage {
+            dictionary["usage"] = usage
+        }
+        
+        return dictionary
     }
 }

@@ -41,16 +41,14 @@ public struct Translation: DictionaryDeserializable, DictionarySerializable {
     
     public var dictionary: JSONDictionary {
         
-        let meaningsDictionary = meanings.map({ $0.dictionary })
-        let additionalMeaningsDictionary = additionalMeanings.map({ $0.dictionary })
-        let compoundMeaningsDictionary = compoundMeanings.map({ $0.dictionary })
+        let meaningsDictionary = meanings.map { $0.dictionary }
+        let additionalMeaningsDictionary = additionalMeanings.map { $0.dictionary }
+        let compoundMeaningsDictionary = compoundMeanings.map { $0.dictionary }
         
         return [
-            "term0" : [
-                "PrincipalTranslations" : meaningsDictionary,
-                "AdditionalTranslations" : additionalMeaningsDictionary,
-                "Compounds" : compoundMeaningsDictionary
-            ]
+            "PrincipalMeanings" : meaningsDictionary,
+            "AdditionalMeanings" : additionalMeaningsDictionary,
+            "CompoundMeanings" : compoundMeaningsDictionary
         ]
     }
 }

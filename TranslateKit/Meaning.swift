@@ -62,9 +62,10 @@ public struct Meaning: DictionaryDeserializable, DictionarySerializable {
     
     public var dictionary: JSONDictionary {
         
-        let translatedWordsDictionary = translatedWords.map({ $0.dictionary })
+        let translatedWordsDictionary = translatedWords.map { $0.dictionary }
         
-        return ["originalWord": originalWord.dictionary,
+        return [
+            "originalWord": originalWord.dictionary,
             "translatedWords" : translatedWordsDictionary
         ]
     }
