@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct Translation: DictionaryDeserializable {
+public struct Translation: DictionaryDeserializable, DictionarySerializable {
     
     public let meanings: [Meaning]
     public let additionalMeanings: [Meaning]
@@ -38,6 +38,19 @@ public struct Translation: DictionaryDeserializable {
         
         return meanings
     }
-
-    // FIXME: Implement DictionarySerializable
+    
+    public var dictionary: JSONDictionary {
+        
+        let meaningsDictionary = meanings.map({ $0.dictionary })
+        let additionalMeaningsDictionary = additionalMeanings.map({ $0.dictionary })
+        let compoundMeaningsDictionary = compoundMeanings.map({ $0.dictionary })
+        
+        return [
+            "term0" : [
+                "PrincipalTranslations" : meaningsDictionary,
+                "AdditionalTranslations" : additionalMeaningsDictionary,
+                "Compounds" : compoundMeaningsDictionary
+            ]
+        ]
+    }
 }
