@@ -70,7 +70,48 @@ public enum Language: String {
             return "tr"
         }
     }
-    
+
+    public func emoji() -> String {
+        switch self {
+        case Arabic:
+            return "🇸🇦"
+        case Chinese:
+            return "🇨🇳"
+        case Czech:
+            return "🇨🇿"
+        case Dutch:
+            return "🇳🇱"
+        case English:
+            return "🇺🇸"
+        case French:
+            return "🇫🇷"
+        case German:
+            return "🇩🇪"
+        case Greek:
+            return "🇬🇷"
+        case Italian:
+            return "🇮🇹"
+        case Japanese:
+            return "🇯🇵"
+        case Korean:
+            return "🇰🇷"
+        case Polish:
+            return "🇵🇱"
+        case Portuguese:
+            return "🇵🇹"
+        case Russian:
+            return "🇷🇺"
+        case Romanian:
+            return "🇷🇴"
+        case Spanish:
+            return "🇪🇸"
+        case Swedish:
+            return "🇸🇪"
+        case Turkish:
+            return "🇹🇷"
+        }
+    }
+
     public func name() -> String {
         return String(self)
     }
