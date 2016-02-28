@@ -1,0 +1,31 @@
+{
+  "interactions" : [
+    {
+      "recorded_at" : 1456694700.026844,
+      "response" : {
+        "body" : {
+          "Error" : "NoTranslation",
+          "Note" : "No translation was found for kjbkkfsubfskubksfbksfbsf.\nAucune traduction trouvée pour kjbkkfsubfskubksfbksfbsf."
+        },
+        "status" : 200,
+        "url" : "http:\/\/api.wordreference.com\/API_KEY\/json\/\/enfr\/kjbkkfsubfskubksfbksfbsf",
+        "headers" : {
+          "Access-Control-Allow-Origin" : "*",
+          "Set-Cookie" : "per24h=1; domain=www.wordreference.com; expires=Mon, 29-Feb-2016 21:24:33 GMT; path=\/, per24c=1; domain=www.wordreference.com; expires=Mon, 29-Feb-2016 21:24:33 GMT; path=\/, llang=enfri; domain=wordreference.com; expires=Thu, 28-Feb-2019 21:24:33 GMT; path=\/",
+          "Content-Type" : "application\/json; charset=utf-8",
+          "Server" : "Microsoft-IIS\/8.5",
+          "Date" : "Sun, 28 Feb 2016 21:24:32 GMT",
+          "Access-Control-Allow-Headers" : "X-Requested-With",
+          "Content-Length" : "161",
+          "Cache-Control" : "private",
+          "X-AspNet-Version" : "4.0.30319"
+        }
+      },
+      "request" : {
+        "method" : "GET",
+        "url" : "http:\/\/api.wordreference.com\/API_KEY\/json\/\/enfr\/kjbkkfsubfskubksfbksfbsf"
+      }
+    }
+  ],
+  "name" : "api-TranslateWordNotFound"
+}

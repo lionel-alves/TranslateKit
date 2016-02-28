@@ -43,7 +43,8 @@ class TranslateKitTests: XCTestCase {
         let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
         
         client.translate(word: "arm", from: .English, to: .French) { result in
-            guard case .Success(let translation) = result else {
+            guard case .Success(let t) = result,
+                let translation = t else {
                 XCTFail("Failure.")
                 return
             }
@@ -70,7 +71,8 @@ class TranslateKitTests: XCTestCase {
         let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
         
         client.translate(word: "arm", from: .English, to: .French) { result in
-            guard case .Success(let translation) = result else {
+            guard case .Success(let t) = result,
+                let translation = t else {
                 XCTFail("Failure.")
                 return
             }
@@ -97,7 +99,8 @@ class TranslateKitTests: XCTestCase {
         let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
 
         client.translate(word: "arm", from: .English, to: .French) { result in
-            guard case .Success(let translation) = result else {
+            guard case .Success(let t) = result,
+                let translation = t else {
                 XCTFail("Failure.")
                 return
             }
@@ -112,6 +115,24 @@ class TranslateKitTests: XCTestCase {
             XCTAssertEqual(translation.compoundMeanings[1].originalWord.pos, "n")
             XCTAssertEqual(translation.compoundMeanings[1].originalWord.sense, "high price, high cost")
 
+            expectation.fulfill()
+        }
+
+        waitForExpectationsWithTimeout(1, handler: nil)
+    }
+
+    func testTranslateWordNotFound() {
+
+        let dvr = Session(cassetteName: "api-TranslateWordNotFound", backingSession: Client.defaultSession)
+        let expectation = expectationWithDescription("Network")
+        let client = Client(wordReferenceApiKey: "API_KEY", URLSession: dvr)
+
+        client.translate(word: "kjbkkfsubfskubksfbksfbsf", from: .English, to: .French) { result in
+            guard case .Success(let translation) = result where translation == nil else {
+                XCTFail("Failure.")
+                return
+            }
+            XCTAssertTrue(true)
             expectation.fulfill()
         }
 

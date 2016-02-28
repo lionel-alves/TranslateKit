@@ -50,7 +50,7 @@ public class Client {
     }
 
     // MARK: Word Reference
-    public func translate(word word: String, from: Language, to: Language, completion: Result<Translation> -> Void) {
+    public func translate(word word: String, from: Language, to: Language, completion: Result<Translation?> -> Void) {
         
         guard let URL = NSURL(string: "\(wordReferenceBaseUrl)/\(from.code())\(to.code())/\(word)") else {
             dispatch(result: .Failure, completion: completion)
@@ -60,13 +60,16 @@ public class Client {
         let request = NSMutableURLRequest(URL: URL)
         
         performRequest(request) { result in
-            guard case .Success(let dictionary) = result,
-                let translation = Translation(dictionary: dictionary) else {
+            switch result {
+            case .Success(let dictionary):
+                if let translation = Translation(dictionary: dictionary) {
+                    self.dispatch(result: .Success(translation), completion: completion)
+                } else {
+                    self.dispatch(result: .Success(nil), completion: completion)
+                }
+            case .Failure:
                 self.dispatch(result: .Failure, completion: completion)
-                return
             }
-
-            self.dispatch(result: .Success(translation), completion: completion)
         }
     }
 
