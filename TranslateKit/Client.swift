@@ -31,7 +31,7 @@ public class Client {
     public func define(slang word: String, completion: [SlangDefinition]? -> Void) {
 
         guard let URL = NSURL(string: "\(urbanDictionaryBaseUrl)/define?term=\(word)") else {
-            completion(nil)
+            dispatch(result: nil, completion: completion)
             return
         }
 
@@ -40,7 +40,7 @@ public class Client {
         performRequest(request) { (dictionary: JSONDictionary?) -> Void in
             if let dictionary = dictionary, list = dictionary["list"] as? [JSONDictionary] {
                 let definitions = list.flatMap { SlangDefinition(dictionary: $0) }
-                completion(definitions)
+                self.dispatch(result: definitions, completion: completion)
             }
         }
     }
@@ -49,7 +49,7 @@ public class Client {
     public func translate(word word: String, from: Language, to: Language, completion: Translation? -> Void) {
         
         guard let URL = NSURL(string: "\(wordReferenceBaseUrl)/\(from.code())\(to.code())/\(word)") else {
-            completion(nil)
+            dispatch(result: nil, completion: completion)
             return
         }
         
@@ -57,7 +57,7 @@ public class Client {
         
         performRequest(request) { (dictionary: JSONDictionary?) -> Void in
             if let translation: Translation = dictionary.flatMap ({ Translation(dictionary: $0) }) {
-                completion(translation)
+                self.dispatch(result: translation, completion: completion)
             }
         }
     }
@@ -79,5 +79,9 @@ public class Client {
 
         task.resume()
         return task
+    }
+
+    private func dispatch<T>(result result: T, completion: T -> Void) {
+        dispatch_async(dispatch_get_main_queue()) { completion(result) }
     }
 }
