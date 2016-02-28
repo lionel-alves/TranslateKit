@@ -16,6 +16,7 @@
 		38E68DC71C6FF12E00F51787 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E68DC61C6FF12E00F51787 /* Language.swift */; };
 		38E68DC91C70ED5A00F51787 /* api-TranslateWord.json in Resources */ = {isa = PBXBuildFile; fileRef = 38E68DC81C70ED5A00F51787 /* api-TranslateWord.json */; };
 		D77C65531C78359100622275 /* JSONDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77C65521C78359100622275 /* JSONDictionary.swift */; };
+		D78780CF1C837EC10038F177 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78780CE1C837EC10038F177 /* Result.swift */; };
 		D7AF7C591C53DBC0002ADC8A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C581C53DBC0002ADC8A /* Client.swift */; };
 		D7AF7C621C53E7F0002ADC8A /* SlangDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C611C53E7F0002ADC8A /* SlangDefinition.swift */; };
 		D7C964271C53D7E0007B7BB7 /* TranslateKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C964261C53D7E0007B7BB7 /* TranslateKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,6 +57,7 @@
 		38E68DC61C6FF12E00F51787 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		38E68DC81C70ED5A00F51787 /* api-TranslateWord.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-TranslateWord.json"; sourceTree = "<group>"; };
 		D77C65521C78359100622275 /* JSONDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDictionary.swift; sourceTree = "<group>"; };
+		D78780CE1C837EC10038F177 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D7AF7C521C53DAEA002ADC8A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D7AF7C581C53DBC0002ADC8A /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		D7AF7C611C53E7F0002ADC8A /* SlangDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlangDefinition.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				38E68DC61C6FF12E00F51787 /* Language.swift */,
 				38E68DC51C6FE3C400F51787 /* UrbanDictionary */,
 				38E68DC41C6FBF1700F51787 /* WordReference */,
+				D78780CE1C837EC10038F177 /* Result.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				38E68DC71C6FF12E00F51787 /* Language.swift in Sources */,
 				D77C65531C78359100622275 /* JSONDictionary.swift in Sources */,
 				38E68DBF1C6FBCF200F51787 /* Translation.swift in Sources */,
+				D78780CF1C837EC10038F177 /* Result.swift in Sources */,
 				38E68DC11C6FBD8A00F51787 /* Meaning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
