@@ -15,16 +15,27 @@ public struct Translation: DictionaryDeserializable, DictionarySerializable {
     public let compoundMeanings: [Meaning]
     
     public init?(dictionary:JSONDictionary) {
-        guard let termDictionary = dictionary["term0"] as? JSONDictionary else { return nil }
+        guard let principalesDictionary = dictionary["PrincipalMeanings"] as? JSONDictionary else { return nil }
         
-        let meanings = Translation.meanings(fromDictionary: termDictionary["PrincipalTranslations"] as? JSONDictionary)
+        let meanings = Translation.meanings(fromDictionary: principalesDictionary)
         guard meanings.count > 0 else { return nil }
         
         self.meanings = meanings
-        self.additionalMeanings = Translation.meanings(fromDictionary: termDictionary["AdditionalTranslations"] as? JSONDictionary)
-        self.compoundMeanings = Translation.meanings(fromDictionary: dictionary["original"]?["Compounds"] as? JSONDictionary)
+        self.additionalMeanings = Translation.meanings(fromDictionary: dictionary["AdditionalMeanings"] as? JSONDictionary)
+        self.compoundMeanings = Translation.meanings(fromDictionary: dictionary["CompoundMeanings"] as? JSONDictionary)
     }
-    
+
+    public init?(webserviceDictionary:JSONDictionary) {
+        guard let termDictionary = webserviceDictionary["term0"] as? JSONDictionary else { return nil }
+
+        let meanings = Translation.meanings(fromWebDictionary: termDictionary["PrincipalTranslations"] as? JSONDictionary)
+        guard meanings.count > 0 else { return nil }
+
+        self.meanings = meanings
+        self.additionalMeanings = Translation.meanings(fromWebDictionary: termDictionary["AdditionalTranslations"] as? JSONDictionary)
+        self.compoundMeanings = Translation.meanings(fromWebDictionary: webserviceDictionary["original"]?["Compounds"] as? JSONDictionary)
+    }
+
     // MARK: - Private
     
     static private func meanings(fromDictionary dictionary: JSONDictionary?) -> [Meaning] {
@@ -38,7 +49,19 @@ public struct Translation: DictionaryDeserializable, DictionarySerializable {
         
         return meanings
     }
-    
+
+    static private func meanings(fromWebDictionary dictionary: JSONDictionary?) -> [Meaning] {
+        guard let meaningsDictionary = dictionary else { return [] }
+
+        let sortedDictionary = meaningsDictionary.sort({ $0.0 < $1.0 })
+        let meanings:[Meaning] = sortedDictionary.flatMap {
+            guard let dictionary = $0.1 as? JSONDictionary else { return nil }
+            return Meaning(webserviceDictionary: dictionary)
+        }
+
+        return meanings
+    }
+
     public var dictionary: JSONDictionary {
         
         let meaningsDictionary = meanings.map { $0.dictionary }

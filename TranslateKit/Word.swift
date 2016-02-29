@@ -30,7 +30,7 @@ public struct Word: DictionaryDeserializable, DictionarySerializable {
         
         var dictionary = [
             "term" : term,
-            "pos" : pos,
+            "POS" : pos,
             "sense" : sense
         ]
         

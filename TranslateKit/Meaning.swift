@@ -45,15 +45,26 @@ public struct Meaning: DictionaryDeserializable, DictionarySerializable {
     
     public init?(dictionary: JSONDictionary) {
         
-        guard let originalWordDictionary = dictionary["OriginalTerm"] as? JSONDictionary,
-            originalWord = Word(dictionary: originalWordDictionary) else { return nil }
+        guard let originalWordDictionary = dictionary["originalWord"] as? JSONDictionary,
+            originalWord = Word(dictionary: originalWordDictionary),
+            translatedWords = dictionary["translatedWords"] as? [JSONDictionary] else { return nil }
         
         self.originalWord = originalWord
-        
-        let sortedDictionaries = dictionary.sort {
+
+        self.translatedWords = translatedWords.flatMap { Word(dictionary: $0) }
+    }
+
+    public init?(webserviceDictionary: JSONDictionary) {
+
+        guard let originalWordDictionary = webserviceDictionary["OriginalTerm"] as? JSONDictionary,
+            originalWord = Word(dictionary: originalWordDictionary) else { return nil }
+
+        self.originalWord = originalWord
+
+        let sortedDictionaries = webserviceDictionary.sort {
             Meaning.OrdinalNumber(rawValue: $0.0)?.priority < Meaning.OrdinalNumber(rawValue: $1.0)?.priority
         }
-        
+
         self.translatedWords = sortedDictionaries.flatMap {
             guard let dictionary = $0.1 as? JSONDictionary where $0.0 != "OriginalTerm" else { return nil }
             return Word(dictionary: dictionary)

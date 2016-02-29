@@ -62,7 +62,7 @@ public class Client {
         performRequest(request) { result in
             switch result {
             case .Success(let dictionary):
-                if let translation = Translation(dictionary: dictionary) {
+                if let translation: Translation = dictionary.flatMap ({ Translation(webserviceDictionary: $0) }) {
                     self.dispatch(result: .Success(translation), completion: completion)
                 } else {
                     self.dispatch(result: .Success(nil), completion: completion)
