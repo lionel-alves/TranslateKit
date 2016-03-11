@@ -28,53 +28,64 @@ public class Client {
     // MARK: - API
 
 	// MARK: Urban Dictionary
-    public func define(slang word: String, completion: [SlangDefinition]? -> Void) {
+    public func define(slang word: String, completion: Result<[SlangDefinition]> -> Void) {
 
         guard let URL = NSURL(string: "\(urbanDictionaryBaseUrl)/define?term=\(word)") else {
-            dispatch(result: nil, completion: completion)
+            dispatch(result: .Failure, completion: completion)
             return
         }
 
         let request = NSMutableURLRequest(URL: URL)
 
-        performRequest(request) { (dictionary: JSONDictionary?) -> Void in
-            if let dictionary = dictionary, list = dictionary["list"] as? [JSONDictionary] {
-                let definitions = list.flatMap { SlangDefinition(dictionary: $0) }
-                self.dispatch(result: definitions, completion: completion)
+        performRequest(request) { result in
+            guard case .Success(let dictionary) = result,
+                let list = dictionary["list"] as? [JSONDictionary] else {
+                self.dispatch(result: .Failure, completion: completion)
+                return
             }
+
+            let definitions = list.flatMap { SlangDefinition(dictionary: $0) }
+            self.dispatch(result: .Success(definitions), completion: completion)
         }
     }
 
     // MARK: Word Reference
-    public func translate(word word: String, from: Language, to: Language, completion: Translation? -> Void) {
+    public func translate(word word: String, from: Language, to: Language, completion: Result<Translation?> -> Void) {
         
         guard let URL = NSURL(string: "\(wordReferenceBaseUrl)/\(from.code())\(to.code())/\(word)") else {
-            dispatch(result: nil, completion: completion)
+            dispatch(result: .Failure, completion: completion)
             return
         }
         
         let request = NSMutableURLRequest(URL: URL)
         
-        performRequest(request) { (dictionary: JSONDictionary?) -> Void in
-            if let translation: Translation = dictionary.flatMap ({ Translation(dictionary: $0) }) {
-                self.dispatch(result: translation, completion: completion)
+        performRequest(request) { result in
+            switch result {
+            case .Success(let dictionary):
+                if let translation = Translation(dictionary: dictionary) {
+                    self.dispatch(result: .Success(translation), completion: completion)
+                } else {
+                    self.dispatch(result: .Success(nil), completion: completion)
+                }
+            case .Failure:
+                self.dispatch(result: .Failure, completion: completion)
             }
         }
     }
 
     // MARK: - Private
 
-    private func performRequest(URLRequest: NSURLRequest, completion: JSONDictionary? -> Void) -> NSURLSessionDataTask? {
+    private func performRequest(URLRequest: NSURLRequest, completion: Result<JSONDictionary> -> Void) -> NSURLSessionDataTask? {
 
         let task = URLSession.dataTaskWithRequest(URLRequest) { data, response, error in
             guard let data = data,
                 parseData = try? NSJSONSerialization.JSONObjectWithData(data, options: []),
                 json = parseData as? JSONDictionary else {
-                    completion(nil)
+                    completion(.Failure)
                     return
             }
 
-            completion(json)
+            completion(.Success(json))
         }
 
         task.resume()
