@@ -8,24 +8,18 @@
 
 import UIKit
 
-public struct Translation: DictionaryDeserializable, DictionarySerializable {
+public struct Translation {
+
+    // MARK: - Properties
 
     public let meanings: [Meaning]
     public let additionalMeanings: [Meaning]
     public let compoundMeanings: [Meaning]
 
-    public init?(dictionary:JSONDictionary) {
-        guard let principalesDictionary = dictionary["PrincipalMeanings"] as? [JSONDictionary] else { return nil }
 
-        let meanings = principalesDictionary.flatMap { Meaning(dictionary: $0) }
-        guard meanings.count > 0 else { return nil }
+    // MARK: - Initializer
 
-        self.meanings = meanings
-        self.additionalMeanings = (dictionary["AdditionalMeanings"] as? [JSONDictionary])?.flatMap { Meaning(dictionary: $0) } ?? []
-        self.compoundMeanings = (dictionary["CompoundMeanings"] as? [JSONDictionary])?.flatMap { Meaning(dictionary: $0) } ?? []
-    }
-
-    public init?(webserviceDictionary:JSONDictionary) {
+    init?(webserviceDictionary: JSONDictionary) {
         guard let termDictionary = webserviceDictionary["term0"] as? JSONDictionary else { return nil }
 
         let meanings = Translation.meanings(fromWebDictionary: termDictionary["PrincipalTranslations"] as? JSONDictionary)
@@ -35,6 +29,7 @@ public struct Translation: DictionaryDeserializable, DictionarySerializable {
         self.additionalMeanings = Translation.meanings(fromWebDictionary: termDictionary["AdditionalTranslations"] as? JSONDictionary)
         self.compoundMeanings = Translation.meanings(fromWebDictionary: webserviceDictionary["original"]?["Compounds"] as? JSONDictionary)
     }
+
 
     // MARK: - Private
 
@@ -48,6 +43,21 @@ public struct Translation: DictionaryDeserializable, DictionarySerializable {
         }
 
         return meanings
+    }
+}
+
+
+extension Translation: DictionaryDeserializable, DictionarySerializable {
+
+    public init?(dictionary: JSONDictionary) {
+        guard let principalesDictionary = dictionary["PrincipalMeanings"] as? [JSONDictionary] else { return nil }
+
+        let meanings = principalesDictionary.flatMap { Meaning(dictionary: $0) }
+        guard meanings.count > 0 else { return nil }
+
+        self.meanings = meanings
+        self.additionalMeanings = (dictionary["AdditionalMeanings"] as? [JSONDictionary])?.flatMap { Meaning(dictionary: $0) } ?? []
+        self.compoundMeanings = (dictionary["CompoundMeanings"] as? [JSONDictionary])?.flatMap { Meaning(dictionary: $0) } ?? []
     }
 
     public var dictionary: JSONDictionary {

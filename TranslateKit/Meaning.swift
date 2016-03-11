@@ -8,12 +8,11 @@
 
 import Foundation
 
-public struct Meaning: DictionaryDeserializable, DictionarySerializable {
-    
-    public let originalWord: Word
-    public let translatedWords: [Word]
-    
-    enum OrdinalNumber: String {
+public struct Meaning {
+
+    // MARK: - Types
+
+    private enum OrdinalNumber: String {
         case OriginalTerm
         case FirstTranslation
         case SecondTranslation
@@ -25,7 +24,7 @@ public struct Meaning: DictionaryDeserializable, DictionarySerializable {
         case EighthTranslation
         case NinthTranslation
         case TenthTranslation
-        
+
         var priority: Int {
             switch self {
             case OriginalTerm:          return 0
@@ -42,19 +41,17 @@ public struct Meaning: DictionaryDeserializable, DictionarySerializable {
             }
         }
     }
+
+
+    // MARK: - Properties
+
+    public let originalWord: Word
+    public let translatedWords: [Word]
     
-    public init?(dictionary: JSONDictionary) {
-        
-        guard let originalWordDictionary = dictionary["originalWord"] as? JSONDictionary,
-            originalWord = Word(dictionary: originalWordDictionary),
-            translatedWords = dictionary["translatedWords"] as? [JSONDictionary] else { return nil }
-        
-        self.originalWord = originalWord
 
-        self.translatedWords = translatedWords.flatMap { Word(dictionary: $0) }
-    }
+    // MARK: - Initializer
 
-    public init?(webserviceDictionary: JSONDictionary) {
+    init?(webserviceDictionary: JSONDictionary) {
 
         guard let originalWordDictionary = webserviceDictionary["OriginalTerm"] as? JSONDictionary,
             originalWord = Word(dictionary: originalWordDictionary) else { return nil }
@@ -70,11 +67,25 @@ public struct Meaning: DictionaryDeserializable, DictionarySerializable {
             return Word(dictionary: dictionary)
         }
     }
-    
+}
+
+
+extension Meaning: DictionaryDeserializable, DictionarySerializable {
+
+    public init?(dictionary: JSONDictionary) {
+
+        guard let originalWordDictionary = dictionary["originalWord"] as? JSONDictionary,
+            originalWord = Word(dictionary: originalWordDictionary),
+            translatedWords = dictionary["translatedWords"] as? [JSONDictionary] else { return nil }
+
+        self.originalWord = originalWord
+        self.translatedWords = translatedWords.flatMap { Word(dictionary: $0) }
+    }
+
     public var dictionary: JSONDictionary {
-        
+
         let translatedWordsDictionary = translatedWords.map { $0.dictionary }
-        
+
         return [
             "originalWord": originalWord.dictionary,
             "translatedWords" : translatedWordsDictionary

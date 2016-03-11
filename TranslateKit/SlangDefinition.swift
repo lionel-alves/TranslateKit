@@ -8,13 +8,19 @@
 
 import Foundation
 
-public struct SlangDefinition: DictionaryDeserializable, DictionarySerializable {
+public struct SlangDefinition {
+
+    // MARK: - Properties
 
     public let id: Double
     public let definition: String
     public let example: String
     public let thumbsUp: Double
     public let thumbsDown: Double
+}
+
+
+extension SlangDefinition: DictionaryDeserializable, DictionarySerializable {
 
     public init?(dictionary: JSONDictionary) {
 
