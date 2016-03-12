@@ -45,9 +45,13 @@ class TranslateKitTests: XCTestCase {
         client.translate(word: "arm", from: .English, to: .French) { result in
             guard case .Success(let t) = result,
                 let translation = t else {
-                XCTFail("Failure.")
-                return
+                    XCTFail("Failure.")
+                    return
             }
+
+            XCTAssertEqual(translation.searchText, "arm")
+            XCTAssertEqual(translation.fromLanguage, Language.English)
+            XCTAssertEqual(translation.toLanguage, Language.French)
 
             // Principal Translation
             XCTAssertEqual(translation.meanings.first?.translatedWords.first?.term, "bras")
@@ -60,7 +64,7 @@ class TranslateKitTests: XCTestCase {
 
             expectation.fulfill()
         }
-        
+
         waitForExpectationsWithTimeout(1, handler: nil)
     }
 
@@ -69,13 +73,17 @@ class TranslateKitTests: XCTestCase {
         let dvr = Session(cassetteName: "api-TranslateWord", backingSession: Client.defaultSession)
         let expectation = expectationWithDescription("Network")
         let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
-        
+
         client.translate(word: "arm", from: .English, to: .French) { result in
             guard case .Success(let t) = result,
                 let translation = t else {
-                XCTFail("Failure.")
-                return
+                    XCTFail("Failure.")
+                    return
             }
+
+            XCTAssertEqual(translation.searchText, "arm")
+            XCTAssertEqual(translation.fromLanguage, Language.English)
+            XCTAssertEqual(translation.toLanguage, Language.French)
 
             // Additional Translation
             XCTAssertEqual(translation.additionalMeanings[1].translatedWords.first?.term, "section, division")
@@ -85,7 +93,6 @@ class TranslateKitTests: XCTestCase {
             XCTAssertEqual(translation.additionalMeanings[1].originalWord.term, "arm")
             XCTAssertEqual(translation.additionalMeanings[1].originalWord.pos, "n")
             XCTAssertEqual(translation.additionalMeanings[1].originalWord.sense, "military: branch")
-
             expectation.fulfill()
         }
 
@@ -101,9 +108,13 @@ class TranslateKitTests: XCTestCase {
         client.translate(word: "arm", from: .English, to: .French) { result in
             guard case .Success(let t) = result,
                 let translation = t else {
-                XCTFail("Failure.")
-                return
+                    XCTFail("Failure.")
+                    return
             }
+
+            XCTAssertEqual(translation.searchText, "arm")
+            XCTAssertEqual(translation.fromLanguage, Language.English)
+            XCTAssertEqual(translation.toLanguage, Language.French)
 
             // Compound Translation
             XCTAssertEqual(translation.compoundMeanings[1].translatedWords[2].term, "la peau des fesses")

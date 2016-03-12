@@ -9,11 +9,11 @@
 import Foundation
 
 public class Client {
-    
+
     private let URLSession: NSURLSession
     private let urbanDictionaryBaseUrl = "http://api.urbandictionary.com/v0"
     private let wordReferenceBaseUrl: String
-    
+
     public init(wordReferenceApiKey: String, URLSession: NSURLSession = defaultSession) {
         self.wordReferenceBaseUrl = "http://api.wordreference.com/\(wordReferenceApiKey)/json/"
         self.URLSession = URLSession
@@ -27,7 +27,7 @@ public class Client {
 
     // MARK: - API
 
-	// MARK: Urban Dictionary
+    // MARK: Urban Dictionary
     public func define(slang word: String, completion: Result<[SlangDefinition]> -> Void) {
 
         guard let URL = NSURL(string: "\(urbanDictionaryBaseUrl)/define?term=\(word)") else {
@@ -40,8 +40,8 @@ public class Client {
         performRequest(request) { result in
             guard case .Success(let dictionary) = result,
                 let list = dictionary["list"] as? [JSONDictionary] else {
-                self.dispatch(result: .Failure, completion: completion)
-                return
+                    self.dispatch(result: .Failure, completion: completion)
+                    return
             }
 
             let definitions = list.flatMap { SlangDefinition(dictionary: $0) }
@@ -51,18 +51,18 @@ public class Client {
 
     // MARK: Word Reference
     public func translate(word word: String, from: Language, to: Language, completion: Result<Translation?> -> Void) {
-        
+
         guard let URL = NSURL(string: "\(wordReferenceBaseUrl)/\(from.code())\(to.code())/\(word)") else {
             dispatch(result: .Failure, completion: completion)
             return
         }
-        
+
         let request = NSMutableURLRequest(URL: URL)
-        
+
         performRequest(request) { result in
             switch result {
             case .Success(let dictionary):
-                if let translation: Translation = dictionary.flatMap ({ Translation(webserviceDictionary: $0) }) {
+                if let translation = Translation(webserviceDictionary: dictionary, searchText: word, from: from, to: to) {
                     self.dispatch(result: .Success(translation), completion: completion)
                 } else {
                     self.dispatch(result: .Success(nil), completion: completion)

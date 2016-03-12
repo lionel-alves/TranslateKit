@@ -8,9 +8,13 @@
 
 import UIKit
 
-public struct Translation {
+public struct Translation: Equatable {
 
     // MARK: - Properties
+
+    public let fromLanguage: Language
+    public let toLanguage: Language
+    public let searchText: String
 
     public let meanings: [Meaning]
     public let additionalMeanings: [Meaning]
@@ -19,8 +23,12 @@ public struct Translation {
 
     // MARK: - Initializer
 
-    init?(webserviceDictionary: JSONDictionary) {
+    init?(webserviceDictionary: JSONDictionary, searchText: String, from: Language, to: Language) {
         guard let termDictionary = webserviceDictionary["term0"] as? JSONDictionary else { return nil }
+
+        self.fromLanguage = from
+        self.toLanguage = to
+        self.searchText = searchText
 
         let meanings = Translation.meanings(fromWebDictionary: termDictionary["PrincipalTranslations"] as? JSONDictionary)
         guard meanings.count > 0 else { return nil }
@@ -47,10 +55,31 @@ public struct Translation {
 }
 
 
+extension Translation: Hashable {
+    public var hashValue: Int {
+        return fromLanguage.hashValue ^ toLanguage.hashValue ^ searchText.hashValue
+    }
+}
+
+
+public func ==(lhs: Translation, rhs: Translation) -> Bool {
+    return lhs.hashValue == rhs.hashValue
+}
+
+
 extension Translation: DictionaryDeserializable, DictionarySerializable {
 
     public init?(dictionary: JSONDictionary) {
-        guard let principalesDictionary = dictionary["PrincipalMeanings"] as? [JSONDictionary] else { return nil }
+        guard let fromLanguageRawValue = dictionary["FromLanguage"] as? String,
+                fromLanguage = Language(rawValue: fromLanguageRawValue),
+                toLanguageRawValue = dictionary["ToLanguage"] as? String,
+                toLanguage = Language(rawValue: toLanguageRawValue),
+                searchText = dictionary["SearchText"] as? String,
+                principalesDictionary = dictionary["PrincipalMeanings"] as? [JSONDictionary] else { return nil }
+
+        self.fromLanguage = fromLanguage
+        self.toLanguage = toLanguage
+        self.searchText = searchText
 
         let meanings = principalesDictionary.flatMap { Meaning(dictionary: $0) }
         guard meanings.count > 0 else { return nil }
@@ -67,6 +96,9 @@ extension Translation: DictionaryDeserializable, DictionarySerializable {
         let compoundMeaningsDictionary = compoundMeanings.map { $0.dictionary }
 
         return [
+            "FromLanguage" : fromLanguage.rawValue,
+            "ToLanguage" : toLanguage.rawValue,
+            "SearchText" : searchText,
             "PrincipalMeanings" : meaningsDictionary,
             "AdditionalMeanings" : additionalMeaningsDictionary,
             "CompoundMeanings" : compoundMeaningsDictionary
