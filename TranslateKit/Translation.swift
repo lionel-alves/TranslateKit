@@ -17,8 +17,6 @@ public struct Translation: Equatable {
     public let searchText: String
 
     public let meanings: [Meaning]
-    public let additionalMeanings: [Meaning]
-    public let compoundMeanings: [Meaning]
 
 
     // MARK: - Initializer
@@ -30,12 +28,12 @@ public struct Translation: Equatable {
         self.toLanguage = to
         self.searchText = searchText
 
-        let meanings = Translation.meanings(fromWebDictionary: termDictionary["PrincipalTranslations"] as? JSONDictionary)
-        guard meanings.count > 0 else { return nil }
+        var meanings = Translation.meanings(fromWebDictionary: termDictionary["PrincipalTranslations"] as? JSONDictionary)
+        meanings.appendContentsOf(Translation.meanings(fromWebDictionary: termDictionary["AdditionalTranslations"] as? JSONDictionary))
+        meanings.appendContentsOf(Translation.meanings(fromWebDictionary: webserviceDictionary["original"]?["Compounds"] as? JSONDictionary))
 
+        guard meanings.count > 0 else { return nil }
         self.meanings = meanings
-        self.additionalMeanings = Translation.meanings(fromWebDictionary: termDictionary["AdditionalTranslations"] as? JSONDictionary)
-        self.compoundMeanings = Translation.meanings(fromWebDictionary: webserviceDictionary["original"]?["Compounds"] as? JSONDictionary)
     }
 
 
@@ -75,33 +73,27 @@ extension Translation: DictionaryDeserializable, DictionarySerializable {
                 toLanguageRawValue = dictionary["ToLanguage"] as? String,
                 toLanguage = Language(rawValue: toLanguageRawValue),
                 searchText = dictionary["SearchText"] as? String,
-                principalesDictionary = dictionary["PrincipalMeanings"] as? [JSONDictionary] else { return nil }
+                meaningsDictionary = dictionary["Meanings"] as? [JSONDictionary] else { return nil }
 
         self.fromLanguage = fromLanguage
         self.toLanguage = toLanguage
         self.searchText = searchText
 
-        let meanings = principalesDictionary.flatMap { Meaning(dictionary: $0) }
+        let meanings = meaningsDictionary.flatMap { Meaning(dictionary: $0) }
         guard meanings.count > 0 else { return nil }
 
         self.meanings = meanings
-        self.additionalMeanings = (dictionary["AdditionalMeanings"] as? [JSONDictionary])?.flatMap { Meaning(dictionary: $0) } ?? []
-        self.compoundMeanings = (dictionary["CompoundMeanings"] as? [JSONDictionary])?.flatMap { Meaning(dictionary: $0) } ?? []
     }
 
     public var dictionary: JSONDictionary {
 
         let meaningsDictionary = meanings.map { $0.dictionary }
-        let additionalMeaningsDictionary = additionalMeanings.map { $0.dictionary }
-        let compoundMeaningsDictionary = compoundMeanings.map { $0.dictionary }
 
         return [
             "FromLanguage" : fromLanguage.rawValue,
             "ToLanguage" : toLanguage.rawValue,
             "SearchText" : searchText,
-            "PrincipalMeanings" : meaningsDictionary,
-            "AdditionalMeanings" : additionalMeaningsDictionary,
-            "CompoundMeanings" : compoundMeaningsDictionary
+            "Meanings" : meaningsDictionary,
         ]
     }
 }
