@@ -49,7 +49,9 @@ public class Client {
         }
     }
 
+
     // MARK: Word Reference
+
     public func translate(word word: String, from: Language, to: Language, completion: Result<Translation?> -> Void) {
 
         guard let URL = NSURL(string: "\(wordReferenceBaseUrl)/\(from.code())\(to.code())/\(word)") else {
