@@ -1,0 +1,3 @@
+[submodule "Carthage/Checkouts/DVR"]
+	path = Carthage/Checkouts/DVR
+	url = https://github.com/venmo/DVR.git
