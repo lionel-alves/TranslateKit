@@ -16,7 +16,6 @@
 		7EC9F4901E1AECF300B0C82F /* DVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC9F4891E1AEC2100B0C82F /* DVR.framework */; };
 		D75B9A1B1C839DBE003870AE /* api-TranslateWordNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = D75B9A1A1C839DBE003870AE /* api-TranslateWordNotFound.json */; };
 		D77C65531C78359100622275 /* JSONDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77C65521C78359100622275 /* JSONDictionary.swift */; };
-		D77E50921D18F27A0077404E /* DVR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D77E508F1D18F1A70077404E /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D78780CF1C837EC10038F177 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78780CE1C837EC10038F177 /* Result.swift */; };
 		D7AF7C591C53DBC0002ADC8A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C581C53DBC0002ADC8A /* Client.swift */; };
 		D7AF7C621C53E7F0002ADC8A /* SlangDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C611C53E7F0002ADC8A /* SlangDefinition.swift */; };
@@ -86,7 +85,6 @@
 		7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DVR.xcodeproj; path = Carthage/Checkouts/DVR/DVR.xcodeproj; sourceTree = "<group>"; };
 		D75B9A1A1C839DBE003870AE /* api-TranslateWordNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-TranslateWordNotFound.json"; sourceTree = "<group>"; };
 		D77C65521C78359100622275 /* JSONDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDictionary.swift; sourceTree = "<group>"; };
-		D77E508F1D18F1A70077404E /* DVR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVR.framework; path = Carthage/Build/iOS/DVR.framework; sourceTree = "<group>"; };
 		D78780CE1C837EC10038F177 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D7AF7C581C53DBC0002ADC8A /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		D7AF7C611C53E7F0002ADC8A /* SlangDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlangDefinition.swift; sourceTree = "<group>"; };
@@ -297,9 +295,11 @@
 					D7C964221C53D7E0007B7BB7 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 55M9M2TX7A;
+						LastSwiftMigration = 0820;
 					};
 					D7C9642C1C53D7E1007B7BB7 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -524,7 +524,7 @@
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -549,7 +549,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -564,7 +564,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wetranslate.TranslateKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -579,7 +579,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wetranslate.TranslateKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

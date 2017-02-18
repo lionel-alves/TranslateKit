@@ -16,7 +16,7 @@ class TranslateKitTests: XCTestCase {
     func testDefineWord() {
         
         let dvr = Session(cassetteName: "api-DefineWord", backingSession: Client.defaultSession)
-        let expectation = expectationWithDescription("Network")
+        let expectation = self.expectation(description: "Network")
         let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
 
         client.define(slang: "hello") { result in
@@ -32,14 +32,14 @@ class TranslateKitTests: XCTestCase {
 
             expectation.fulfill()
         }
-        waitForExpectationsWithTimeout(1, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
     
     // Word Reference
     func testTranslateWord() {
         
         let dvr = Session(cassetteName: "api-TranslateWord", backingSession: Client.defaultSession)
-        let expectation = expectationWithDescription("Network")
+        let expectation = self.expectation(description: "Network")
         let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
         
         client.translate(word: "arm", from: .English, to: .French) { result in
@@ -65,17 +65,17 @@ class TranslateKitTests: XCTestCase {
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(1, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
 
     func testTranslateWordNotFound() {
 
         let dvr = Session(cassetteName: "api-TranslateWordNotFound", backingSession: Client.defaultSession)
-        let expectation = expectationWithDescription("Network")
+        let expectation = self.expectation(description: "Network")
         let client = Client(wordReferenceApiKey: "API_KEY", URLSession: dvr)
 
         client.translate(word: "kjbkkfsubfskubksfbksfbsf", from: .English, to: .French) { result in
-            guard case .Success(let translation) = result where translation == nil else {
+            guard case .Success(let translation) = result, translation == nil else {
                 XCTFail("Failure.")
                 return
             }
@@ -83,6 +83,6 @@ class TranslateKitTests: XCTestCase {
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(1, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
     }
 }

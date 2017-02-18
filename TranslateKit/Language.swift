@@ -32,88 +32,88 @@ public enum Language: String {
     
     public func code() -> String {
         switch self {
-        case Arabic:
+        case .Arabic:
             return "ar"
-        case Chinese:
+        case .Chinese:
             return "zh"
-        case Czech:
+        case .Czech:
             return "cz"
-        case Dutch:
+        case .Dutch:
             return "nl"
-        case English:
+        case .English:
             return "en"
-        case French:
+        case .French:
             return "fr"
-        case German:
+        case .German:
             return "de"
-        case Greek:
+        case .Greek:
             return "gr"
-        case Italian:
+        case .Italian:
             return "it"
-        case Japanese:
+        case .Japanese:
             return "ja"
-        case Korean:
+        case .Korean:
             return "ko"
-        case Polish:
+        case .Polish:
             return "pl"
-        case Portuguese:
+        case .Portuguese:
             return "pt"
-        case Russian:
+        case .Russian:
             return "ru"
-        case Romanian:
+        case .Romanian:
             return "ro"
-        case Spanish:
+        case .Spanish:
             return "es"
-        case Swedish:
+        case .Swedish:
             return "sv"
-        case Turkish:
+        case .Turkish:
             return "tr"
         }
     }
 
     public func emoji() -> String {
         switch self {
-        case Arabic:
+        case .Arabic:
             return "🇸🇦"
-        case Chinese:
+        case .Chinese:
             return "🇨🇳"
-        case Czech:
+        case .Czech:
             return "🇨🇿"
-        case Dutch:
+        case .Dutch:
             return "🇳🇱"
-        case English:
+        case .English:
             return "🇺🇸"
-        case French:
+        case .French:
             return "🇫🇷"
-        case German:
+        case .German:
             return "🇩🇪"
-        case Greek:
+        case .Greek:
             return "🇬🇷"
-        case Italian:
+        case .Italian:
             return "🇮🇹"
-        case Japanese:
+        case .Japanese:
             return "🇯🇵"
-        case Korean:
+        case .Korean:
             return "🇰🇷"
-        case Polish:
+        case .Polish:
             return "🇵🇱"
-        case Portuguese:
+        case .Portuguese:
             return "🇵🇹"
-        case Russian:
+        case .Russian:
             return "🇷🇺"
-        case Romanian:
+        case .Romanian:
             return "🇷🇴"
-        case Spanish:
+        case .Spanish:
             return "🇪🇸"
-        case Swedish:
+        case .Swedish:
             return "🇸🇪"
-        case Turkish:
+        case .Turkish:
             return "🇹🇷"
         }
     }
 
     public func name() -> String {
-        return String(self)
+        return String(describing: self)
     }
 
     public static func allLanguages() -> [Language] {
