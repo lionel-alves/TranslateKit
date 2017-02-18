@@ -16,7 +16,6 @@
 		7EC9F4901E1AECF300B0C82F /* DVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC9F4891E1AEC2100B0C82F /* DVR.framework */; };
 		D75B9A1B1C839DBE003870AE /* api-TranslateWordNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = D75B9A1A1C839DBE003870AE /* api-TranslateWordNotFound.json */; };
 		D77C65531C78359100622275 /* JSONDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77C65521C78359100622275 /* JSONDictionary.swift */; };
-		D77E50921D18F27A0077404E /* DVR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D77E508F1D18F1A70077404E /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D78780CF1C837EC10038F177 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78780CE1C837EC10038F177 /* Result.swift */; };
 		D7AF7C591C53DBC0002ADC8A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C581C53DBC0002ADC8A /* Client.swift */; };
 		D7AF7C621C53E7F0002ADC8A /* SlangDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7C611C53E7F0002ADC8A /* SlangDefinition.swift */; };
@@ -26,6 +25,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7EC6AEA51E58B58700F2CC0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2104F52E1DC658580039CA14;
+			remoteInfo = "DVR-tvOS";
+		};
+		7EC6AEA71E58B58700F2CC0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2104F5361DC658590039CA14;
+			remoteInfo = "DVRTests-tvOS";
+		};
 		7EC9F4881E1AEC2100B0C82F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
@@ -86,7 +99,6 @@
 		7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DVR.xcodeproj; path = Carthage/Checkouts/DVR/DVR.xcodeproj; sourceTree = "<group>"; };
 		D75B9A1A1C839DBE003870AE /* api-TranslateWordNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-TranslateWordNotFound.json"; sourceTree = "<group>"; };
 		D77C65521C78359100622275 /* JSONDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDictionary.swift; sourceTree = "<group>"; };
-		D77E508F1D18F1A70077404E /* DVR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVR.framework; path = Carthage/Build/iOS/DVR.framework; sourceTree = "<group>"; };
 		D78780CE1C837EC10038F177 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D7AF7C581C53DBC0002ADC8A /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		D7AF7C611C53E7F0002ADC8A /* SlangDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlangDefinition.swift; sourceTree = "<group>"; };
@@ -153,6 +165,8 @@
 				7EC9F48B1E1AEC2100B0C82F /* DVRTests-iOS.xctest */,
 				7EC9F48D1E1AEC2100B0C82F /* DVR.framework */,
 				7EC9F48F1E1AEC2100B0C82F /* DVRTests-OSX.xctest */,
+				7EC6AEA61E58B58700F2CC0A /* DVR.framework */,
+				7EC6AEA81E58B58700F2CC0A /* DVRTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,9 +311,11 @@
 					D7C964221C53D7E0007B7BB7 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 55M9M2TX7A;
+						LastSwiftMigration = 0820;
 					};
 					D7C9642C1C53D7E1007B7BB7 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -328,6 +344,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		7EC6AEA61E58B58700F2CC0A /* DVR.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DVR.framework;
+			remoteRef = 7EC6AEA51E58B58700F2CC0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EC6AEA81E58B58700F2CC0A /* DVRTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DVRTests.xctest;
+			remoteRef = 7EC6AEA71E58B58700F2CC0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7EC9F4891E1AEC2100B0C82F /* DVR.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -524,7 +554,7 @@
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -549,7 +579,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -564,7 +594,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wetranslate.TranslateKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -579,7 +609,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wetranslate.TranslateKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

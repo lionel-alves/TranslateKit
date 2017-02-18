@@ -25,10 +25,10 @@ extension SlangDefinition: DictionaryDeserializable, DictionarySerializable {
     public init?(dictionary: JSONDictionary) {
 
         guard let id = dictionary["defid"] as? Double,
-            definition = dictionary["definition"] as? String,
-            example = dictionary["example"] as? String,
-            thumbsUp = dictionary["thumbs_up"] as? Double,
-            thumbsDown = dictionary["thumbs_down"] as? Double else { return nil }
+            let definition = dictionary["definition"] as? String,
+            let example = dictionary["example"] as? String,
+            let thumbsUp = dictionary["thumbs_up"] as? Double,
+            let thumbsDown = dictionary["thumbs_down"] as? Double else { return nil }
 
         self.id = id
         self.definition = definition
@@ -39,11 +39,11 @@ extension SlangDefinition: DictionaryDeserializable, DictionarySerializable {
 
     public var dictionary: JSONDictionary {
         return [
-            "defid": id,
-            "definition": definition,
-            "example": example,
-            "thumbs_up": thumbsUp,
-            "thumbs_down": thumbsDown,
+            "defid": id as AnyObject,
+            "definition": definition as AnyObject,
+            "example": example as AnyObject,
+            "thumbs_up": thumbsUp as AnyObject,
+            "thumbs_down": thumbsDown as AnyObject,
         ]
     }
 }

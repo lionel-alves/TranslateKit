@@ -23,8 +23,8 @@ extension Word: DictionaryDeserializable, DictionarySerializable {
     
     public init?(dictionary: JSONDictionary) {
         guard let term = dictionary["term"] as? String,
-            pos = dictionary["POS"] as? String,
-            sense = dictionary["sense"] as? String else { return nil }
+            let pos = dictionary["POS"] as? String,
+            let sense = dictionary["sense"] as? String, !term.isEmpty && term != "-" else { return nil }
 
         self.term = term
         self.pos = pos
@@ -44,6 +44,6 @@ extension Word: DictionaryDeserializable, DictionarySerializable {
             dictionary["usage"] = usage
         }
 
-        return dictionary
+        return dictionary as JSONDictionary
     }
 }

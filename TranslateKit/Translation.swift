@@ -29,8 +29,8 @@ public struct Translation: Equatable {
         self.searchText = searchText
 
         var meanings = Translation.meanings(fromWebDictionary: termDictionary["PrincipalTranslations"] as? JSONDictionary)
-        meanings.appendContentsOf(Translation.meanings(fromWebDictionary: termDictionary["AdditionalTranslations"] as? JSONDictionary))
-        meanings.appendContentsOf(Translation.meanings(fromWebDictionary: webserviceDictionary["original"]?["Compounds"] as? JSONDictionary))
+        meanings.append(contentsOf: Translation.meanings(fromWebDictionary: termDictionary["AdditionalTranslations"] as? JSONDictionary))
+        meanings.append(contentsOf: Translation.meanings(fromWebDictionary: webserviceDictionary["original"]?["Compounds"] as? JSONDictionary))
 
         guard meanings.count > 0 else { return nil }
         self.meanings = meanings
@@ -39,10 +39,10 @@ public struct Translation: Equatable {
 
     // MARK: - Private
 
-    static private func meanings(fromWebDictionary dictionary: JSONDictionary?) -> [Meaning] {
+    static fileprivate func meanings(fromWebDictionary dictionary: JSONDictionary?) -> [Meaning] {
         guard let meaningsDictionary = dictionary else { return [] }
 
-        let sortedDictionary = meaningsDictionary.sort({ $0.0 < $1.0 })
+        let sortedDictionary = meaningsDictionary.sorted(by: { $0.0 < $1.0 })
         let meanings:[Meaning] = sortedDictionary.flatMap {
             guard let dictionary = $0.1 as? JSONDictionary else { return nil }
             return Meaning(webserviceDictionary: dictionary)
@@ -69,11 +69,11 @@ extension Translation: DictionaryDeserializable, DictionarySerializable {
 
     public init?(dictionary: JSONDictionary) {
         guard let fromLanguageRawValue = dictionary["FromLanguage"] as? String,
-                fromLanguage = Language(rawValue: fromLanguageRawValue),
-                toLanguageRawValue = dictionary["ToLanguage"] as? String,
-                toLanguage = Language(rawValue: toLanguageRawValue),
-                searchText = dictionary["SearchText"] as? String,
-                meaningsDictionary = dictionary["Meanings"] as? [JSONDictionary] else { return nil }
+                let fromLanguage = Language(rawValue: fromLanguageRawValue),
+                let toLanguageRawValue = dictionary["ToLanguage"] as? String,
+                let toLanguage = Language(rawValue: toLanguageRawValue),
+                let searchText = dictionary["SearchText"] as? String,
+                let meaningsDictionary = dictionary["Meanings"] as? [JSONDictionary] else { return nil }
 
         self.fromLanguage = fromLanguage
         self.toLanguage = toLanguage
@@ -90,10 +90,10 @@ extension Translation: DictionaryDeserializable, DictionarySerializable {
         let meaningsDictionary = meanings.map { $0.dictionary }
 
         return [
-            "FromLanguage" : fromLanguage.rawValue,
-            "ToLanguage" : toLanguage.rawValue,
-            "SearchText" : searchText,
-            "Meanings" : meaningsDictionary,
+            "FromLanguage" : fromLanguage.rawValue as AnyObject,
+            "ToLanguage" : toLanguage.rawValue as AnyObject,
+            "SearchText" : searchText as AnyObject,
+            "Meanings" : meaningsDictionary as AnyObject,
         ]
     }
 }
