@@ -25,6 +25,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7EC6AEA51E58B58700F2CC0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2104F52E1DC658580039CA14;
+			remoteInfo = "DVR-tvOS";
+		};
+		7EC6AEA71E58B58700F2CC0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2104F5361DC658590039CA14;
+			remoteInfo = "DVRTests-tvOS";
+		};
 		7EC9F4881E1AEC2100B0C82F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
@@ -151,6 +165,8 @@
 				7EC9F48B1E1AEC2100B0C82F /* DVRTests-iOS.xctest */,
 				7EC9F48D1E1AEC2100B0C82F /* DVR.framework */,
 				7EC9F48F1E1AEC2100B0C82F /* DVRTests-OSX.xctest */,
+				7EC6AEA61E58B58700F2CC0A /* DVR.framework */,
+				7EC6AEA81E58B58700F2CC0A /* DVRTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,6 +344,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		7EC6AEA61E58B58700F2CC0A /* DVR.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DVR.framework;
+			remoteRef = 7EC6AEA51E58B58700F2CC0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EC6AEA81E58B58700F2CC0A /* DVRTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DVRTests.xctest;
+			remoteRef = 7EC6AEA71E58B58700F2CC0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7EC9F4891E1AEC2100B0C82F /* DVR.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;

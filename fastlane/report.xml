@@ -2,13 +2,15 @@
 <testsuites>
   <testsuite name="fastlane.lanes">
     
+    
+    
       
-      <testcase classname="fastlane.lanes" name="0: rm -rf ../Carthage/Build" time="0.004339">
+      <testcase classname="fastlane.lanes" name="0: rm -rf ../Carthage/Build" time="0.004742">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: carthage" time="0.376483">
+      <testcase classname="fastlane.lanes" name="1: carthage" time="0.404303">
         
       </testcase>
     

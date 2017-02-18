@@ -20,7 +20,7 @@ class TranslateKitTests: XCTestCase {
         let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
 
         client.define(slang: "hello") { result in
-            guard case .Success(let definitions) = result else {
+            guard case .success(let definitions) = result else {
                 XCTFail("Failure.")
                 return
             }
@@ -43,7 +43,7 @@ class TranslateKitTests: XCTestCase {
         let client = Client(wordReferenceApiKey: "api_key", URLSession:dvr)
         
         client.translate(word: "arm", from: .English, to: .French) { result in
-            guard case .Success(let t) = result,
+            guard case .success(let t) = result,
                 let translation = t else {
                     XCTFail("Failure.")
                     return
@@ -75,7 +75,7 @@ class TranslateKitTests: XCTestCase {
         let client = Client(wordReferenceApiKey: "API_KEY", URLSession: dvr)
 
         client.translate(word: "kjbkkfsubfskubksfbksfbsf", from: .English, to: .French) { result in
-            guard case .Success(let translation) = result, translation == nil else {
+            guard case .success(let translation) = result, translation == nil else {
                 XCTFail("Failure.")
                 return
             }
