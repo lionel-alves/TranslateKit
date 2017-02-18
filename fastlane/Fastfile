@@ -1,0 +1,18 @@
+TOOLCHAIN = 'com.apple.dt.toolchain.Swift_2_3'
+
+desc "Setup project: bootstrap Carthage"
+lane :setup do |options|
+  verbose = options[:verbose].nil? ? false : options[:verbose]
+
+  sh 'rm -rf ../Carthage/Build'
+
+  carthage(
+    command: 'bootstrap',
+    use_ssh: false,
+    no_build: true,
+    use_submodules: true,
+    platform: 'iOS',
+    verbose: verbose,
+    toolchain: TOOLCHAIN
+  )
+end

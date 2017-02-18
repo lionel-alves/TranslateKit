@@ -13,6 +13,7 @@
 		38E68DC31C6FBDBA00F51787 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E68DC21C6FBDBA00F51787 /* Word.swift */; };
 		38E68DC71C6FF12E00F51787 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E68DC61C6FF12E00F51787 /* Language.swift */; };
 		38E68DC91C70ED5A00F51787 /* api-TranslateWord.json in Resources */ = {isa = PBXBuildFile; fileRef = 38E68DC81C70ED5A00F51787 /* api-TranslateWord.json */; };
+		7EC9F4901E1AECF300B0C82F /* DVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC9F4891E1AEC2100B0C82F /* DVR.framework */; };
 		D75B9A1B1C839DBE003870AE /* api-TranslateWordNotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = D75B9A1A1C839DBE003870AE /* api-TranslateWordNotFound.json */; };
 		D77C65531C78359100622275 /* JSONDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77C65521C78359100622275 /* JSONDictionary.swift */; };
 		D77E50921D18F27A0077404E /* DVR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D77E508F1D18F1A70077404E /* DVR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -25,6 +26,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7EC9F4881E1AEC2100B0C82F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3647AF9B1B335D5500EF10D4;
+			remoteInfo = "DVR-iOS";
+		};
+		7EC9F48A1E1AEC2100B0C82F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3647AFA51B335D5500EF10D4;
+			remoteInfo = "DVRTests-iOS";
+		};
+		7EC9F48C1E1AEC2100B0C82F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3690A07B1B33AA3B00731222;
+			remoteInfo = "DVR-OSX";
+		};
+		7EC9F48E1E1AEC2100B0C82F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3690A0841B33AA3C00731222;
+			remoteInfo = "DVRTests-OSX";
+		};
 		D7C9642F1C53D7E1007B7BB7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D7C9641A1C53D7E0007B7BB7 /* Project object */;
@@ -41,7 +70,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D77E50921D18F27A0077404E /* DVR.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +83,7 @@
 		38E68DC21C6FBDBA00F51787 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		38E68DC61C6FF12E00F51787 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		38E68DC81C70ED5A00F51787 /* api-TranslateWord.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-TranslateWord.json"; sourceTree = "<group>"; };
+		7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DVR.xcodeproj; path = Carthage/Checkouts/DVR/DVR.xcodeproj; sourceTree = "<group>"; };
 		D75B9A1A1C839DBE003870AE /* api-TranslateWordNotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-TranslateWordNotFound.json"; sourceTree = "<group>"; };
 		D77C65521C78359100622275 /* JSONDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDictionary.swift; sourceTree = "<group>"; };
 		D77E508F1D18F1A70077404E /* DVR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVR.framework; path = Carthage/Build/iOS/DVR.framework; sourceTree = "<group>"; };
@@ -74,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC9F4901E1AECF300B0C82F /* DVR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +146,17 @@
 			name = UrbanDictionary;
 			sourceTree = "<group>";
 		};
+		7EC9F4821E1AEC2100B0C82F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EC9F4891E1AEC2100B0C82F /* DVR.framework */,
+				7EC9F48B1E1AEC2100B0C82F /* DVRTests-iOS.xctest */,
+				7EC9F48D1E1AEC2100B0C82F /* DVR.framework */,
+				7EC9F48F1E1AEC2100B0C82F /* DVRTests-OSX.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D77C65511C78357000622275 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +168,7 @@
 		D7AF7C551C53DB49002ADC8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D77E508F1D18F1A70077404E /* DVR.framework */,
+				7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -272,6 +313,12 @@
 			mainGroup = D7C964191C53D7E0007B7BB7;
 			productRefGroup = D7C964241C53D7E0007B7BB7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7EC9F4821E1AEC2100B0C82F /* Products */;
+					ProjectRef = 7EC9F4811E1AEC2100B0C82F /* DVR.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D7C964221C53D7E0007B7BB7 /* TranslateKit */,
@@ -279,6 +326,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7EC9F4891E1AEC2100B0C82F /* DVR.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DVR.framework;
+			remoteRef = 7EC9F4881E1AEC2100B0C82F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EC9F48B1E1AEC2100B0C82F /* DVRTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "DVRTests-iOS.xctest";
+			remoteRef = 7EC9F48A1E1AEC2100B0C82F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EC9F48D1E1AEC2100B0C82F /* DVR.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DVR.framework;
+			remoteRef = 7EC9F48C1E1AEC2100B0C82F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EC9F48F1E1AEC2100B0C82F /* DVRTests-OSX.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "DVRTests-OSX.xctest";
+			remoteRef = 7EC9F48E1E1AEC2100B0C82F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D7C964211C53D7E0007B7BB7 /* Resources */ = {
@@ -446,6 +524,7 @@
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -470,6 +549,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -484,6 +564,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wetranslate.TranslateKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -498,6 +579,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wetranslate.TranslateKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
