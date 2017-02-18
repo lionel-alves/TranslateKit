@@ -5,5 +5,8 @@ xcode_project: TranslateKit.xcodeproj
 xcode_scheme: TranslateKit
 xcode_sdk: iphonesimulator10.2
 
+before_install:
+  - rvm use ruby-2.0.0-p648 
+
 notifications:
   slack: wetranslateteam:FaCCuM3G8pNFJzfCsGOLcvBy#ios-annonce
